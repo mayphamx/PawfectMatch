@@ -10,7 +10,7 @@ const userData = require("./userData.json");
 const petProfileData = require("./petProfileData.json");
 const meetupData = require("./meetupData.json");
 const meetupCommentData = require("./meetupCommentData.json");
-const meetupPet = require("meetupPetData./.json");
+const meetupPet = require("./meetupPetData.json");
 
 const seedDatabase = async () => {
   try {
