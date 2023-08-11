@@ -41,7 +41,7 @@ Meetup.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Meetup",
+    modelName: "meetup",
   }
 );
 
