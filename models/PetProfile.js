@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class PetProfile extends Model {}
 
@@ -11,7 +11,7 @@ PetProfile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    pet_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,17 +27,33 @@ PetProfile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    activity_level: {
+    personality: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    vaccinated: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    photo: {
+      type: DataTypes.STRING, // ! check MULTER docs
+      allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "User",
+        key: "id",
+        unique: false,
       },
     },
+  },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'petprofile',
+    modelName: "PetProfile",
   }
 );
 

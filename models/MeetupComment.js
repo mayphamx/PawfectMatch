@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Meetup extends Model {}
+class MeetupComment extends Model {}
 
-Meetup.init(
+MeetupComment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,23 +11,19 @@ Meetup.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    meetup_date: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
+    comment: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
-    host_id: {
+    meetup_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "Meetup",
+        key: "id",
+      },
+    },
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -41,8 +37,8 @@ Meetup.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Meetup",
+    modelName: "MeetupComment",
   }
 );
 
-module.exports = Meetup;
+module.exports = MeetupComment;
