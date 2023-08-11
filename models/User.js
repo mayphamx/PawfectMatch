@@ -8,6 +8,7 @@ class User extends Model {
   }
 }
 
+// ! add user input for pets
 User.init(
   {
     id: {
