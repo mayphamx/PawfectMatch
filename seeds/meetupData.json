@@ -1,10 +1,16 @@
 [
   {
-    "name": "Austin Park Meetup",
-    "description": "Let's meet up at the Austin Park this weekend and let our furry friends run loose! Water will be provided for both humans and pets!"
+    "title": "Austin Park Meetup",
+    "meetup_date": "08/16/2023",
+    "location": "Central Park",
+    "description": "Let's meet up at the Austin Park this weekend and let our furry friends run loose! Water will be provided for both humans and pets!",
+    "host_id": "2"
   },
   {
-    "name": "Downtown Group Dog Walking",
-    "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!"
+    "title": "Downtown Group Dog Walking",
+    "meetup_date": "09/25/2023",
+    "location": "Central Park",
+    "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!",
+    "host_id": "2"
   }
 ]

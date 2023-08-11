@@ -1,9 +1,119 @@
 [
   {
-    "name": "Bubba",
+    "pet_name": "Bubba",
     "catdog": "cat",
     "age": 3,
     "breed": "Tabby",
-    "activity_level ": "lazy"
+    "personality ": "lazy",
+    "vaccinated": true,
+    "user_id": 1
+  },
+  {
+    "pet_name": "Max",
+    "catdog": "dog",
+    "age": 5,
+    "breed": "Labrador",
+    "personality": "energetic",
+    "vaccinated": true,
+    "user_id": 2
+  },
+  {
+    "pet_name": "Whiskers",
+    "catdog": "cat",
+    "age": 2,
+    "breed": "Persian",
+    "personality": "playful",
+    "vaccinated": false,
+    "user_id": 3
+  },
+  {
+    "pet_name": "Buddy",
+    "catdog": "dog",
+    "age": 7,
+    "breed": "Golden Retriever",
+    "personality": "friendly",
+    "vaccinated": true,
+    "user_id": 4
+  },
+  {
+    "pet_name": "Luna",
+    "catdog": "cat",
+    "age": 1,
+    "breed": "Siamese",
+    "personality": "independent",
+    "vaccinated": true,
+    "user_id": 1
+  },
+  {
+    "pet_name": "Rocky",
+    "catdog": "dog",
+    "age": 4,
+    "breed": "German Shepherd",
+    "personality": "protective",
+    "vaccinated": true,
+    "user_id": 2
+  },
+  {
+    "pet_name": "Oliver",
+    "catdog": "cat",
+    "age": 6,
+    "breed": "Maine Coon",
+    "personality": "affectionate",
+    "vaccinated": true,
+    "user_id": 3
+  },
+  {
+    "pet_name": "Bailey",
+    "catdog": "dog",
+    "age": 3,
+    "breed": "Beagle",
+    "personality": "curious",
+    "vaccinated": true,
+    "user_id": 4
+  },
+  {
+    "pet_name": "Milo",
+    "catdog": "cat",
+    "age": 4,
+    "breed": "Ragdoll",
+    "personality": "gentle",
+    "vaccinated": true,
+    "user_id": 1
+  },
+  {
+    "pet_name": "Daisy",
+    "catdog": "dog",
+    "age": 2,
+    "breed": "Poodle",
+    "personality": "playful",
+    "vaccinated": false,
+    "user_id": 2
+  },
+  {
+    "pet_name": "Simba",
+    "catdog": "cat",
+    "age": 1,
+    "breed": "Bengal",
+    "personality": "adventurous",
+    "vaccinated": true,
+    "user_id": 3
+  },
+  {
+    "pet_name": "Charlie",
+    "catdog": "dog",
+    "age": 8,
+    "breed": "Dachshund",
+    "personality": "cuddly",
+    "vaccinated": true,
+    "user_id": 4
+  },
+  {
+    "pet_name": "Cleo",
+    "catdog": "cat",
+    "age": 5,
+    "breed": "Sphynx",
+    "personality": "quirky",
+    "vaccinated": true,
+    "user_id": 1
   }
 ]
