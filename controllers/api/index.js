@@ -4,6 +4,7 @@ const router = require('express').Router();
 const petProfileRoutes = require('./petProfileRoutes');
 const userRoutes = require('./userRoutes');
 const commentRoutes = require('./commentRoutes');
+const commentRoutes = require('./meetupRoutes');
 
 // login/logout page
 router.use('/users', userRoutes);
@@ -11,5 +12,7 @@ router.use('/users', userRoutes);
 router.use('/petprofiles', petProfileRoutes);
 // comments page
 router.use('/comments', commentRoutes);
+// meetup page
+router.use('/meetups', meetupRoutes);
 
 module.exports = router;
