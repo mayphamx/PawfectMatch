@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Meetup extends Model {}
+class PetProfile extends Model {}
 
-Meetup.init(
+PetProfile.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,29 +15,30 @@ Meetup.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    catdog: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
-    date_created: {
+    age: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
+    breed: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    activity_level: {
+      type: DataTypes.STRING,
+      allowNull: false,
       },
     },
-  },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'meetup',
+    modelName: 'petprofile',
   }
 );
 
-module.exports = Meetup;
+module.exports = PetProfile;
