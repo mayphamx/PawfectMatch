@@ -68,14 +68,17 @@ Meetup.hasMany(MeetupRSVP, {
   foreignKey: "meetup_id",
 });
 
+// MeetupRSVP belongs to one Meetup
 MeetupRSVP.belongsTo(Meetup, {
   foreignKey: "meetup_id",
 });
 
+// User can have multiple RSVps to different meetup events
 User.hasMany(MeetupRSVP, {
   foreignKey: "user_id",
 });
 
+// a single MeetupRSVP belongs to a single user
 MeetupRSVP.belongsTo(User, {
   foreignKey: "user_id",
 });
