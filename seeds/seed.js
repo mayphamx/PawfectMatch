@@ -1,10 +1,16 @@
 const sequelize = require("../config/connection");
-const { User, PetProfile, Meetup, MeetupComment } = require("../models");
+const {
+  User,
+  PetProfile,
+  Meetup,
+  MeetupComment,
+  MeetupPet,
+} = require("../models");
 const userData = require("./userData.json");
 const petProfileData = require("./petProfileData.json");
 const meetupData = require("./meetupData.json");
-const CommentData = require("./meetupData.json");
-
+const meetupCommentData = require("./meetupCommentData.json");
+const meetupPet = require("meetupPetData./.json");
 
 const seedDatabase = async () => {
   try {
@@ -18,7 +24,8 @@ const seedDatabase = async () => {
     await PetProfile.bulkCreate(petProfileData);
 
     await Meetup.bulkCreate(meetupData);
-    await MeetupComment.bulkCreate(CommentData);
+    await MeetupComment.bulkCreate(meetupCommentData);
+    await MeetupPet.bulkCreate(meetupPet);
 
     console.log("Database seeded successfully!");
     process.exit(0);
