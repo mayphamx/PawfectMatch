@@ -1,22 +1,28 @@
-const sequelize = require('../config/connection');
-const PetProfile= require('../models/PetProfile');
-const User= require('../models/User');
-
-const petData = require('./petProfileData.json');
-const userData = require('./userData.json');
+const sequelize = require("../config/connection");
+const { User, PetProfile, Meetup } = require("../models");
+const userData = require("./userData.json");
+const petProfileData = require("./petProfileData.json");
+const meetupData = require("./meetupData.json");
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  try {
+    await sequelize.sync({ force: true });
 
-  const petProfile = await PetProfile.bulkCreate(userData, {
-    returning: true,
-  });
+    await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
 
-  const userProfiles = await User.bulkCreate(userData,{
-    returning: true,
-  })
+    await PetProfile.bulkCreate(petProfileData);
 
-  process.exit(0);
+    await Meetup.bulkCreate(meetupData);
+
+    console.log("Database seeded successfully!");
+    process.exit(0);
+  } catch (error) {
+    console.error("Error seeding database:", error);
+    process.exit(1);
+  }
 };
 
 seedDatabase();
