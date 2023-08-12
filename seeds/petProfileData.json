@@ -4,8 +4,9 @@
     "catdog": "cat",
     "age": 3,
     "breed": "Tabby",
-    "personality ": "lazy",
+    "personality": "lazy",
     "vaccinated": true,
+    "photo": null,
     "user_id": 1
   },
   {
@@ -15,6 +16,7 @@
     "breed": "Labrador",
     "personality": "energetic",
     "vaccinated": true,
+    "photo": null,
     "user_id": 2
   },
   {
@@ -24,6 +26,7 @@
     "breed": "Persian",
     "personality": "playful",
     "vaccinated": false,
+    "photo": null,
     "user_id": 3
   },
   {
@@ -33,6 +36,7 @@
     "breed": "Golden Retriever",
     "personality": "friendly",
     "vaccinated": true,
+    "photo": null,
     "user_id": 4
   },
   {
@@ -42,6 +46,7 @@
     "breed": "Siamese",
     "personality": "independent",
     "vaccinated": true,
+    "photo": null,
     "user_id": 1
   },
   {
@@ -51,6 +56,7 @@
     "breed": "German Shepherd",
     "personality": "protective",
     "vaccinated": true,
+    "photo": null,
     "user_id": 2
   },
   {
@@ -60,6 +66,7 @@
     "breed": "Maine Coon",
     "personality": "affectionate",
     "vaccinated": true,
+    "photo": null,
     "user_id": 3
   },
   {
@@ -69,6 +76,7 @@
     "breed": "Beagle",
     "personality": "curious",
     "vaccinated": true,
+    "photo": null,
     "user_id": 4
   },
   {
@@ -78,6 +86,7 @@
     "breed": "Ragdoll",
     "personality": "gentle",
     "vaccinated": true,
+    "photo": null,
     "user_id": 1
   },
   {
@@ -87,6 +96,7 @@
     "breed": "Poodle",
     "personality": "playful",
     "vaccinated": false,
+    "photo": null,
     "user_id": 2
   },
   {
@@ -96,6 +106,7 @@
     "breed": "Bengal",
     "personality": "adventurous",
     "vaccinated": true,
+    "photo": null,
     "user_id": 3
   },
   {
@@ -105,6 +116,7 @@
     "breed": "Dachshund",
     "personality": "cuddly",
     "vaccinated": true,
+    "photo": null,
     "user_id": 4
   },
   {
@@ -114,6 +126,7 @@
     "breed": "Sphynx",
     "personality": "quirky",
     "vaccinated": true,
+    "photo": null,
     "user_id": 1
   }
 ]
