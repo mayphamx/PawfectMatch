@@ -1,11 +1,5 @@
 const sequelize = require("../config/connection");
-const {
-  User,
-  Pet,
-  PlayDate,
-  Comment,
-  MeetupPet,
-} = require("../models");
+const { User, Pet, PlayDate, Comment, MeetupPet } = require("../models");
 const userData = require("./userData.json");
 const petData = require("./petData.json");
 const playdateData = require("./playdateData.json");
@@ -32,7 +26,7 @@ const seedDatabase = async () => {
     console.log("Seeding Meetup data...");
     await PlayDate.bulkCreate(playdateData);
     console.log("Meetup data seeded successfully.");
-    
+
     console.log("Seeding Comment data...");
     await Comment.bulkCreate(CommentData);
     console.log("Comment data seeded successfully.");

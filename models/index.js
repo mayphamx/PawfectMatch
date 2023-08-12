@@ -1,5 +1,5 @@
 const User = require("./User");
-const Pet = require("./PetProfile");
+const Pet = require("./Pet");
 const PlayDate = require("./PlayDate");
 const Comment = require("./Comment");
 const MeetupRSVP = require("./MeetupRSVP");
