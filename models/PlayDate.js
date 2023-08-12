@@ -2,9 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class PlayDate extends Model {}
-class PlayDate extends Model {}
 
-PlayDate.init(
 PlayDate.init(
   {
     id: {
@@ -22,6 +20,7 @@ PlayDate.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    }
     },
     location: {
       type: DataTypes.STRING,
