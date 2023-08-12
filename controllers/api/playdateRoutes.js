@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Meetup, Comment} = require('../../models');
+const { PlayDate, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/:id', async (req, res) => {
 try {
-  const meetupData = await Meetup.findByPk(req.params.id, {
+  const playdateData = await PlayDate.findByPk(req.params.id, {
     include: [{ model: Comment }]
   });
-  res.status(200).json(meetupData);
-  if(!meetupData) {
-    res.status(404).json({ message: 'No meetup found with this ID'});
+  res.status(200).json(playdateData);
+  if(!playdateData) {
+    res.status(404).json({ message: 'No playdate found with this ID'});
     return;
   }
 } catch (err) {
@@ -19,14 +19,14 @@ try {
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newMeetup = await Meetup.create({
+    const newPlayDate = await PlayDate.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    console.log('New meetup created:', newMeetup);
+    console.log('New playdate created:', newPlayDate);
 
-    res.status(200).json(newMeetup);
+    res.status(200).json(newPlayDate);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -34,19 +34,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const meetupData = await Meetup.destroy({
+    const playdateData = await PlayDate.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!meetupData) {
-      res.status(404).json({ message: 'No meetup found with this id!' });
+    if (!playdateData) {
+      res.status(404).json({ message: 'No playdate found with this id!' });
       return;
     }
 
-    res.status(200).json(meetupData);
+    res.status(200).json(playdateData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -54,13 +54,13 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const meetupData = await Meetup.update(req.body, {
+    const playdateData = await PlayDate.update(req.body, {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
-    res.status(200).json(meetupData);
+    res.status(200).json(playdateData);
   } catch (err) {
     res.status(500).json(err);
   }

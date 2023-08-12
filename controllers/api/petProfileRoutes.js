@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { PetProfile, Meetup } = require('../../models');
+const { PetProfile, PlayDate } = require('../../models');
 
 // show a single profile by profile ID
 router.get('/:id', async (req, res) => {
   try {
     const profileData = await PetProfile.findByPk(req.params.id, {
-      include: [{ model: Meetup }]
+      include: [{ model: PlayDate }]
     });
     res.status(200).json(profileData);
     if(!profileData) {
