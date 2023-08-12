@@ -53,7 +53,7 @@ PetProfile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "PetProfile",
+    modelName: "petprofile",
   }
 );
 

@@ -69,7 +69,7 @@ router.get('/edit/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/meetup', withAuth, async (req, res) => {
+router.get('/playdate', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -79,7 +79,7 @@ router.get('/meetup', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('meetup', {
+    res.render('playdate', {
       ...user,
       logged_in: true
     });
@@ -91,7 +91,7 @@ router.get('/meetup', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
   // if logged in, redirect to another route
   if (req.session.logged_in) {
-    res.redirect('/meetup');
+    res.redirect('/playdate');
     return;
   }
 
@@ -101,7 +101,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   // if logged in, redirect to another route
   if (req.session.logged_in) {
-    res.redirect('/meetup');
+    res.redirect('/playdate');
     return;
   }
 

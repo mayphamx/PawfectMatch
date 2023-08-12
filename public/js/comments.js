@@ -1,15 +1,15 @@
 const commentFormHandler = async function (event) {
   event.preventDefault();
 
-  const meetup_id = document.querySelector('.new-comment-form').dataset.meetup_id;
+  const playdate_id = document.querySelector('.new-comment-form').dataset.playdate_id;
 
   const text = document.querySelector('#comment').value.trim();
-  // console.log(meetupId, text);
+  // console.log(playdateId, text);
   if(text) {
     await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({
-        meetup_id,
+        playdate_id,
         text,
       }),
       headers: {

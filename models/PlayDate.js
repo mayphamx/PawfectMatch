@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Meetup extends Model {}
+class PlayDate extends Model {}
 
-Meetup.init(
+PlayDate.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,7 +15,7 @@ Meetup.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    meetup_date: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
@@ -41,8 +41,8 @@ Meetup.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "meetup",
+    modelName: "playDate",
   }
 );
 
-module.exports = Meetup;
+module.exports = PlayDate;
