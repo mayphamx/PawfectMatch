@@ -1,10 +1,10 @@
 const sequelize = require("../config/connection");
-const { User, Pet, PlayDate, Comment, MeetupPet } = require("../models");
+const { User, Pet, PlayDate, Comment/*, MeetupPet*/ } = require("../models");
 const userData = require("./userData.json");
 const petData = require("./petData.json");
 const playdateData = require("./playdateData.json");
-const CommentData = require("./CommentData.json");
-const meetupPet = require("./meetupPetData.json");
+const commentData = require("./commentData.json");
+/*const meetupPet = require("./meetupPetData.json");*/
 
 const seedDatabase = async () => {
   try {
@@ -23,18 +23,21 @@ const seedDatabase = async () => {
     await Pet.bulkCreate(petData);
     console.log("Pet data seeded successfully.");
 
-    console.log("Seeding Meetup data...");
-    await PlayDate.bulkCreate(playdateData);
-    console.log("Meetup data seeded successfully.");
+    console.log("Seeding PlayDate data...");
+    await PlayDate.bulkCreate(playdateData, {
+      individualHooks: true,
+      returning: true,
+    });
+    console.log("Playdate data seeded successfully.");
 
     console.log("Seeding Comment data...");
-    await Comment.bulkCreate(CommentData);
+    await Comment.bulkCreate(commentData);
     console.log("Comment data seeded successfully.");
-
+/*
     console.log("Seeding MeetupPet data...");
     await MeetupPet.bulkCreate(meetupPet);
     console.log("MeetupPet data seeded successfully.");
-
+*/
     console.log("Database seeded successfully!");
     process.exit(0);
   } catch (error) {

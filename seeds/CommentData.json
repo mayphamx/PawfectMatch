@@ -1,63 +1,13 @@
 [
   {
     "comment": "This is great! see you all at the park",
-    "meetup_id": "5",
+    "meetup_id": "1",
     "user_id": "2"
   },
   {
     "comment": "Looking forward to it!",
     "meetup_id": 1,
     "user_id": 3
-  },
-  {
-    "comment": "We're bringing some treats for the furry friends",
-    "meetup_id": 1,
-    "user_id": 4
-  },
-  {
-    "comment": "Can't wait to meet all the adorable pets!",
-    "meetup_id": 2,
-    "user_id": 1
-  },
-  {
-    "comment": "Are there any specific meetup instructions?",
-    "meetup_id": 2,
-    "user_id": 3
-  },
-  {
-    "comment": "Let's make sure to bring enough water for the pets",
-    "meetup_id": 2,
-    "user_id": 4
-  },
-  {
-    "comment": "Count us in! We'll be there with our pup",
-    "meetup_id": 3,
-    "user_id": 2
-  },
-  {
-    "comment": "Sounds like a fun day! We'll bring some toys",
-    "meetup_id": 3,
-    "user_id": 3
-  },
-  {
-    "comment": "Is there an area for the pets to run around?",
-    "meetup_id": 3,
-    "user_id": 1
-  },
-  {
-    "comment": "Looking forward to socializing our furry friends",
-    "meetup_id": 4,
-    "user_id": 4
-  },
-  {
-    "comment": "Do we need to bring anything specific?",
-    "meetup_id": 4,
-    "user_id": 2
-  },
-  {
-    "comment": "See you all at the picnic area!",
-    "meetup_id": 5,
-    "user_id": 3
-  }
+  } 
 
 ]

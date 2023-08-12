@@ -37,12 +37,12 @@ Pet.init(
     },
     photo: {
       type: DataTypes.STRING, // ! check MULTER docs
-      allowNull: false,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "User",
+        model: "user",
         key: "id",
         unique: false,
       },

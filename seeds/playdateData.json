@@ -1,44 +1,20 @@
 [
   {
     "title": "Austin Park Meetup",
-    "meetup_date": "08/16/2023",
     "location": "Central Park",
     "description": "Let's meet up at the Austin Park this weekend and let our furry friends run loose! Water will be provided for both humans and pets!",
-    "host_id": "2"
-  },
-  {
-    "title": "Downtown Group Dog Walking",
-    "meetup_date": "09/25/2023",
-    "location": "Central Park",
-    "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!",
-    "host_id": "2"
-  },
-  {
-    "title": "Paws in the Park",
-    "meetup_date": "08/22/2023",
-    "location": "Zilker Park",
-    "description": "Join us for a fun day of play at Zilker Park! We'll have frisbees, balls, and treats for all the furry attendees.",
-    "host_id": 3
-  },
-  {
-    "title": "Yappy Hour Social",
-    "meetup_date": "09/10/2023",
-    "location": "Dog-friendly Patio",
-    "description": "Bring your pup for a yappy hour social at a dog-friendly patio! Enjoy snacks and drinks while your pets make new friends.",
-    "host_id": 4
-  },
-  {
-    "title": "Pupper Picnic",
-    "meetup_date": "09/03/2023",
-    "location": "Barton Springs Park",
-    "description": "Pack a picnic and join us at Barton Springs Park for a relaxed day with your furry companions. Don't forget the sunscreen!",
     "host_id": 1
   },
   {
-    "title": "Playdate at Town Lake",
-    "meetup_date": "08/29/2023",
-    "location": "Town Lake Trail",
-    "description": "Let's have a playdate by Town Lake Trail! Walk, run, or just chill with fellow pet lovers along the beautiful trail.",
+    "title": "Downtown Group Dog Walking",
+    "location": "Central Park",
+    "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!",
+    "host_id": 2
+  },
+  {
+    "title": "Paws in the Park",
+    "location": "Zilker Park",
+    "description": "Join us for a fun day of play at Zilker Park! We'll have frisbees, balls, and treats for all the furry attendees.",
     "host_id": 3
   }
 ]
