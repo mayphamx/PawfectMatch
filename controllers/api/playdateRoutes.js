@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { PlayDate, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// GET playdate by ID
 router.get('/:id', async (req, res) => {
 try {
   const playdateData = await PlayDate.findByPk(req.params.id, {
@@ -17,6 +18,7 @@ try {
 }
 });
 
+// !CREATE new playdate!
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPlayDate = await PlayDate.create({
@@ -32,6 +34,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// DELETE playdate by ID
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const playdateData = await PlayDate.destroy({
@@ -52,6 +55,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// UPDATE playdate by ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const playdateData = await PlayDate.update(req.body, {

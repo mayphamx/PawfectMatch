@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { PetProfile, PlayDate } = require('../../models');
 
-// show a single profile by profile ID
+// GET a profile by profile ID
 router.get('/:id', async (req, res) => {
   try {
     const profileData = await PetProfile.findByPk(req.params.id, {
@@ -15,6 +15,21 @@ router.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  });
+
+  // !UPDATE profile by ID if logged in
+  router.put('/:id', withAuth, async (req, res) => {
+    try {
+      const profileData = await PetProfile.update(req.body, {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      });
+      res.status(200).json(profileData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
 
 // // create new profile if logged in
@@ -54,20 +69,6 @@ router.get('/:id', async (req, res) => {
 //   }
 // });
 
-// update profile by profile ID if logged in
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const profileData = await PetProfile.update(req.body, {
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-    res.status(200).json(profileData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 
 module.exports = router;

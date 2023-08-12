@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// create comments if logged in
+// CREATE comments if logged in
 router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body);
