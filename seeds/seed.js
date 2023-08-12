@@ -1,10 +1,10 @@
 const sequelize = require("../config/connection");
-const { User, Pet, PlayDate, Comment/*, MeetupPet*/ } = require("../models");
+const { User, Pet, PlayDate, Comment } = require("../models");
 const userData = require("./userData.json");
 const petData = require("./petData.json");
 const playdateData = require("./playdateData.json");
 const commentData = require("./commentData.json");
-/*const meetupPet = require("./meetupPetData.json");*/
+
 
 const seedDatabase = async () => {
   try {
@@ -33,11 +33,7 @@ const seedDatabase = async () => {
     console.log("Seeding Comment data...");
     await Comment.bulkCreate(commentData);
     console.log("Comment data seeded successfully.");
-/*
-    console.log("Seeding MeetupPet data...");
-    await MeetupPet.bulkCreate(meetupPet);
-    console.log("MeetupPet data seeded successfully.");
-*/
+
     console.log("Database seeded successfully!");
     process.exit(0);
   } catch (error) {
