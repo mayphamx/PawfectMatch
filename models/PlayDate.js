@@ -2,7 +2,9 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class PlayDate extends Model {}
+class PlayDate extends Model {}
 
+PlayDate.init(
 PlayDate.init(
   {
     id: {
@@ -15,6 +17,7 @@ PlayDate.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date: {
     date: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -45,4 +48,5 @@ PlayDate.init(
   }
 );
 
+module.exports = PlayDate;
 module.exports = PlayDate;
