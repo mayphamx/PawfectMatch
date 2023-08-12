@@ -1,7 +1,7 @@
 const User = require("./User");
 const Pet = require("./PetProfile");
-const Meetup = require("./PlayDate");
-const MeetupComment = require("./MeetupComment");
+const PlayDate = require("./PlayDate");
+const Comment = require("./Comment");
 const MeetupRSVP = require("./MeetupRSVP");
 const MeetupPet = require("./MeetupPet");
 
@@ -15,18 +15,18 @@ Pet.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-// User can host many Meetups
-User.hasMany(Meetup, {
+// User can host many Playdates
+User.hasMany(PlayDate, {
   foreignKey: "host_id",
 });
 
-//Meetup is hosted by one user
-Meetup.belongsTo(User, {
+//Playdate is hosted by one user
+PlayDate.belongsTo(User, {
   foreignKey: "host_id",
 });
 
-// MeetupPet: One pet can attend many meetup events
-Pet.belongsToMany(Meetup, {
+// One pet can attend many playdate events
+Pet.belongsToMany(PlayDate, {
   through: {
     model: MeetupPet,
     unique: false,
@@ -35,7 +35,7 @@ Pet.belongsToMany(Meetup, {
 });
 
 // MeetupPet: Many pets can attend a single meetup event
-Meetup.belongsToMany(Pet, {
+PlayDate.belongsToMany(Pet, {
   through: {
     model: MeetupPet,
     unique: false,
@@ -43,33 +43,33 @@ Meetup.belongsToMany(Pet, {
   as: "meetup_pets",
 });
 
-// Meetup has many comments
-Meetup.hasMany(MeetupComment, {
+// Playdate has many comments
+PlayDate.hasMany(Comment, {
   foreignKey: "meetup_id",
 });
 
-// each meetup comment belongs to one Meetup event
-MeetupComment.belongsTo(Meetup, {
+// each playdate comment belongs to one Meetup event
+Comment.belongsTo(PlayDate, {
   foreignKey: "meetup_id",
 });
 
 // One user can have multiple comments (in diferent events?)
-User.hasMany(MeetupComment, {
+User.hasMany(Comment, {
   foreignKey: "user_id",
 });
 
 // MeetupComment belongs to one User
-MeetupComment.belongsTo(User, {
+Comment.belongsTo(User, {
   foreignKey: "user_id",
 });
 
 // Meetup event can list the many users who RSVPd
-Meetup.hasMany(MeetupRSVP, {
+PlayDate.hasMany(MeetupRSVP, {
   foreignKey: "meetup_id",
 });
 
 // MeetupRSVP belongs to one Meetup
-MeetupRSVP.belongsTo(Meetup, {
+MeetupRSVP.belongsTo(PlayDate, {
   foreignKey: "meetup_id",
 });
 
@@ -86,8 +86,8 @@ MeetupRSVP.belongsTo(User, {
 module.exports = {
   User,
   Pet,
-  Meetup,
-  MeetupComment,
+  PlayDate,
+  Comment,
   MeetupRSVP,
   MeetupPet,
 };

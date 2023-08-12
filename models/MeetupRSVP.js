@@ -10,7 +10,7 @@ MeetupRsvp.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "MeetupRsvp",
+    modelName: "meetuprsvp",
   }
 );
 

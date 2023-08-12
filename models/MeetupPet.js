@@ -10,7 +10,7 @@ MeetupPet.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "MeetupPet",
+    modelName: "meetuppet",
   }
 );
 
