@@ -1,0 +1,13 @@
+[
+  {
+    "comment": "This is great! see you all at the park",
+    "meetup_id": "1",
+    "user_id": "2"
+  },
+  {
+    "comment": "Looking forward to it!",
+    "meetup_id": 1,
+    "user_id": 3
+  } 
+
+]

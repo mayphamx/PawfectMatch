@@ -1,22 +1,45 @@
-const sequelize = require('../config/connection');
-const PetProfile= require('../models/PetProfile');
-const User= require('../models/User');
+const sequelize = require("../config/connection");
+const { User, Pet, PlayDate, Comment } = require("../models");
+const userData = require("./userData.json");
+const petData = require("./petData.json");
+const playdateData = require("./playdateData.json");
+const commentData = require("./commentData.json");
 
-const petData = require('./petProfileData.json');
-const userData = require('./userData.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  try {
+    console.log("Starting database seeding...");
+    await sequelize.sync({ force: true });
+    console.log("Database synchronization completed.");
 
-  const petProfile = await PetProfile.bulkCreate(userData, {
-    returning: true,
-  });
+    console.log("Seeding User data...");
+    await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
+    console.log("User data seeded successfully.");
 
-  const userProfiles = await User.bulkCreate(userData,{
-    returning: true,
-  })
+    console.log("Seeding Pet data...");
+    await Pet.bulkCreate(petData);
+    console.log("Pet data seeded successfully.");
 
-  process.exit(0);
+    console.log("Seeding PlayDate data...");
+    await PlayDate.bulkCreate(playdateData, {
+      individualHooks: true,
+      returning: true,
+    });
+    console.log("Playdate data seeded successfully.");
+
+    console.log("Seeding Comment data...");
+    await Comment.bulkCreate(commentData);
+    console.log("Comment data seeded successfully.");
+
+    console.log("Database seeded successfully!");
+    process.exit(0);
+  } catch (error) {
+    console.error("Error seeding database:", error);
+    process.exit(1);
+  }
 };
 
 seedDatabase();

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class PetProfile extends Model {}
+class Pet extends Model {}
 
-PetProfile.init(
+Pet.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -37,12 +37,12 @@ PetProfile.init(
     },
     photo: {
       type: DataTypes.STRING, // ! check MULTER docs
-      allowNull: false,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "User",
+        model: "user",
         key: "id",
         unique: false,
       },
@@ -53,8 +53,8 @@ PetProfile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "petprofile",
+    modelName: "pet",
   }
 );
 
-module.exports = PetProfile;
+module.exports = Pet;

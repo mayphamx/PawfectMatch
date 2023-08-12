@@ -1,22 +1,26 @@
 [
   {
-    "name": "May",
+    "user_name": "May",
     "email": "May@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "location": "Austin, Texas"
   },
   {
-    "name": "Ty",
+    "user_name": "Ty",
     "email": "ty@gmail.com",
-    "password": "123password"
+    "password": "123password",
+    "location": "Austin, Texas"
   },
   {
-    "name": "Dahlia",
+    "user_name": "Dahlia",
     "email": "Dahlia@aol.com",
-    "password": "password"
+    "password": "password",
+    "location": "Bryan, Texas"
   },
   {
-    "name": "Jonathan",
+    "user_name": "Jonathan",
     "email": "Jonathan@aol.com",
-    "password": "password111"
+    "password": "password111",
+    "location": "Austin, Texas"
   }
 ]

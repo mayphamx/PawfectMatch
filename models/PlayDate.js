@@ -1,7 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class PlayDate extends Model {}
+class PlayDate extends Model {
+ 
+}
 
 PlayDate.init(
   {
@@ -29,10 +31,10 @@ PlayDate.init(
     },
     host_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "User",
+        references: {
+        model: "user",
         key: "id",
+        unique: false,
       },
     },
   },
@@ -41,7 +43,7 @@ PlayDate.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "playDate",
+    modelName: "playdate",
   }
 );
 
