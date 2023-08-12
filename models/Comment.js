@@ -19,7 +19,7 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "Meetup",
+        model: "playdate",
         key: "id",
       },
     },
