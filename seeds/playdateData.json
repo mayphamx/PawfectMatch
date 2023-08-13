@@ -3,18 +3,18 @@
     "title": "Austin Park Meetup",
     "location": "Central Park",
     "description": "Let's meet up at the Austin Park this weekend and let our furry friends run loose! Water will be provided for both humans and pets!",
-    "host_id": 1
+    "user_id": 1
   },
   {
     "title": "Downtown Group Dog Walking",
     "location": "Central Park",
     "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!",
-    "host_id": 2
+    "user_id": 2
   },
   {
     "title": "Paws in the Park",
     "location": "Zilker Park",
     "description": "Join us for a fun day of play at Zilker Park! We'll have frisbees, balls, and treats for all the furry attendees.",
-    "host_id": 3
+    "user_id": 3
   }
 ]

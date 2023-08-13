@@ -1,16 +1,16 @@
 const User = require("./User");
-const Pet = require("./Pet");
+const PetProfile = require("./PetProfile");
 const PlayDate = require("./PlayDate");
 const Comment = require("./Comment");
 
 
-// User has Many Pets
-User.hasMany(Pet, {
+// User has Many PetProfiles
+User.hasMany(PetProfile, {
   foreignKey: "user_id",
 });
 
-// Pet belongs to one User
-Pet.belongsTo(User, {
+// PetProfile belongs to one User
+PetProfile.belongsTo(User, {
   foreignKey: "user_id",
 });
 
@@ -48,7 +48,7 @@ Comment.belongsTo(User, {
 
 module.exports = {
   User,
-  Pet,
+  PetProfile,
   PlayDate,
   Comment
 };

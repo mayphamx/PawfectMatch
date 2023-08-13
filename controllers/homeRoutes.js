@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
- // GET a playdate by ID (JOIN with user and comment data)
+// GET a playdate by ID (JOIN with user and comment data)
 router.get('/playdate/:id', async (req, res) => {
   try {
     const playdateData = await PlayDate.findByPk(req.params.id, {
@@ -44,7 +44,7 @@ router.get('/playdate/:id', async (req, res) => {
     });
 
     const playdate = playdateData.get({ plain: true });
-
+    
     res.render('playdate', {
       ...playdate,
       logged_in: req.session.logged_in
@@ -57,7 +57,7 @@ router.get('/playdate/:id', async (req, res) => {
 // GET/EDIT a playdate by ID
 router.get('/editplaydate/:id', async (req, res) => {
   try {
-    const playdateData = await PetProfile.findByPk(req.params.id, {});
+    const playdateData = await PlayDate.findByPk(req.params.id, {});
 
     const playdate = playdateData.get({ plain: true });
 
@@ -69,6 +69,38 @@ router.get('/editplaydate/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// GET a petprofile form (JOIN with user)
+router.get('/petprofile', async (req, res) => {
+
+    res.render('petprofileform', {
+      logged_in: req.session.logged_in
+    });
+});
+
+ // GET a petprofile by ID (JOIN with user)
+router.get('/petprofile/:id', async (req, res) => {
+  try {
+    const petprofileData = await PetProfile.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ],
+    });
+
+    const petprofile = petprofileData.get({ plain: true });
+
+    res.render('petprofile', {
+      ...petprofile,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {

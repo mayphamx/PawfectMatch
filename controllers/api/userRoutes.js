@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// sign up route default
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -9,7 +10,7 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json({ userData, message: 'You are now signed up!'});
     });
   } catch (err) {
     res.status(400).json(err);
@@ -41,8 +42,8 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      // res.json({ user: userData, message: 'You are now logged in!' });
-      res.redirect('/');
+      res.json({ user: userData, message: 'You are now logged in!' });
+      // res.redirect('/');
     });
 
   } catch (err) {
@@ -57,6 +58,7 @@ router.post('/logout', (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
+    res.status(200).json({message: 'You are now logged out!'});
   } else {
     res.status(404).end();
   }

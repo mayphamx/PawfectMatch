@@ -12,22 +12,27 @@ Comment.init(
       autoIncrement: true,
     },
     comment: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    meetup_id: {
-      type: DataTypes.INTEGER,
+    date_created: {
+      type: DataTypes.DATE,
       allowNull: false,
-      references: {
-        model: "playdate",
-        key: "id",
-      },
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "User",
+        model: "user",
+        key: "id",
+      },
+    },
+    playdate_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "playdate",
         key: "id",
       },
     },
