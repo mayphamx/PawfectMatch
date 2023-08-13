@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { PetProfile, PlayDate } = require('../../models');
+const withAuth = require("../../utils/auth");
 
 // show a single profile by profile ID
 router.get('/:id', async (req, res) => {
