@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
+    
   },
   "keywords": [],
   "author": "",
@@ -18,11 +19,15 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "firebase": "^8.10.1",
+    "firebase-admin": "^11.10.1",
     "flowbite": "^1.8.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
-       "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   }
 }
