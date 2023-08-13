@@ -1,3 +1,7 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getDatabase, ref, set } from "firebase/database";
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -40,6 +44,36 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+
+// Firebase chat configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDzyudCeG9nMM-QJ2d3dIMfNh8MwUBpucs",
+  authDomain: "pawfectmatch-ad734.firebaseapp.com",
+  databaseURL: "https://pawfectmatch-ad734-default-rtdb.firebaseio.com",
+  projectId: "pawfectmatch-ad734",
+  storageBucket: "pawfectmatch-ad734.appspot.com",
+  messagingSenderId: "1090112866224",
+  appId: "1:1090112866224:web:cd6ea2db0cb770bd7cb875",
+  measurementId: "G-ETT9N3LBPX"
+};
+
+// Initialize Firebase
+const firebaseapp = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+function writeUserData(userId, name, email, imageUrl) {
+const database = getDatabase(firebaseapp);
+const reference = ref(database, 'users/'+userId);
+set(reference, {
+  username: 'name',
+  email: 'email',
+  profile_picture : 'imageUrl'
+  });
+}
+writeUserData('1', 'Dahlia', 'dahli@email.com', 'imageUrl');
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
