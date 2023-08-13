@@ -1,4 +1,7 @@
-const newFormHandler = async (event) => {
+// ! DASHBOARD PAGE WILL SHOW USERS PLAYDATES TO CREATE UPDATE AND DELTE
+
+// CREATE button for new playdate form
+const createButtonHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#playdate-name').value.trim();
@@ -21,6 +24,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+// DELETE button for existing playdates
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const playdateID = event.target.getAttribute('data-id');
@@ -38,6 +42,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+/// UPDATE button for existing playdate form
 const updButtonHandler = async (event) => {
   event.preventDefault();
 
@@ -67,7 +72,7 @@ document.querySelectorAll('playdate-update').forEach(button => {
 });
 
 
-document.querySelector('.newplaydate-form').addEventListener('submit', newFormHandler);
+document.querySelector('.newplaydate-form').addEventListener('submit', createButtonHandler);
 
 document.querySelectorAll('playdate-delete').forEach(button => {
   button.addEventListener('click', delButtonHandler);

@@ -1,7 +1,7 @@
 const sequelize = require("../config/connection");
-const { User, Pet, PlayDate, Comment } = require("../models");
+const { User, PetProfile, PlayDate, Comment } = require("../models");
 const userData = require("./userData.json");
-const petData = require("./petData.json");
+const petprofileData = require("./petprofileData.json");
 const playdateData = require("./playdateData.json");
 const commentData = require("./commentData.json");
 
@@ -20,7 +20,7 @@ const seedDatabase = async () => {
     console.log("User data seeded successfully.");
 
     console.log("Seeding Pet data...");
-    await Pet.bulkCreate(petData);
+    await PetProfile.bulkCreate(petprofileData);
     console.log("Pet data seeded successfully.");
 
     console.log("Seeding PlayDate data...");
