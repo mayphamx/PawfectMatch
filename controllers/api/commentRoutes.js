@@ -1,18 +1,17 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const {Comment} = require('../../models/');
 const withAuth = require("../../utils/auth")
 
 // CREATE comments if logged in
 router.post('/', withAuth, async (req, res) => {
   try {
-    // console.log(req.body);
     const commentData = await Comment.create({
       ...req.body,
-      user_id: req.session.user_id,
+      user_id: req.session.user_id
     });
-    res.status(200).json({comment: commentData, message:'Successfully added comment!'});
+    res.status(200).json({commentData, message:'Successfully added comment!'});
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(400).json(err.message);
   }
 });
 

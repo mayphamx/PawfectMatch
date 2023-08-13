@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { PetProfile} = require('../../models');
-const withAuth = require("../../utils/auth")
-
+const withAuth = require("../../utils/auth");
 
 // CREATE petprofile
   router.post('/', withAuth, async (req, res) => {
