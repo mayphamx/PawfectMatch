@@ -34,12 +34,12 @@ Comment.belongsTo(PlayDate, {
   foreignKey: "playdate_id",
 });
 
-// One user can have multiple comments (in diferent events?)
+// One user can have multiple comments (in different events?)
 User.hasMany(Comment, {
   foreignKey: "user_id",
 });
 
-// playdateComment belongs to one User
+// playdate Comment belongs to one User
 Comment.belongsTo(User, {
   foreignKey: "user_id",
 });
