@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Create Play Date</title>
+</head>
+
+<body class="bg-gray-100 p-8">
+  <div class="flex justify-center">
+    <!-- Create Play Date Form -->
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+      <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
+      <form id="create-event-form" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Title</label>
+          <input type="text" name="title" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Date</label>
+          <input type="date" name="date" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Location</label>
+          <input type="text" name="location" class="mt-1 p-2 w-full border rounded-md">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Description</label>
+          <textarea name="description" rows="3" class="mt-1 p-2 w-full border rounded-md"></textarea>
+        </div>
+        <div class="flex justify-end">
+          <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Create</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Display User's Events -->
+    <div class="bg-white rounded-lg shadow-lg p-6 ml-8 w-96">
+      <h2 class="text-xl font-semibold mb-4">Your Events</h2>
+      <ul id="event-list" class="space-y-4 text-gray-700">
+        <!-- Events will be dynamically added here -->
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+  <script>
+    const createEventForm = document.getElementById("create-event-form");
+    const eventList = document.getElementById("event-list");
+
+    // Handle form submission
+    createEventForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const formData = new FormData(createEventForm);
+
+      // TODO: Handle data submission to your backend and database here
+
+      const title = formData.get("title");
+      const eventItem = createEventItem(title);
+      eventList.appendChild(eventItem);
+    });
+
+    // Create a new event item
+    function createEventItem(title) {
+      const eventItem = document.createElement("li");
+      eventItem.className = "flex justify-between items-center";
+      eventItem.innerHTML = `
+        <span>${title}</span>
+        <div>
+          <button class="px-2 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600 mr-2">Edit</button>
+          <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600">Delete</button>
+        </div>
+      `;
+      return eventItem;
+    }
+  </script>
+</body>
+
+</html>
