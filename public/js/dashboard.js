@@ -1,4 +1,4 @@
-// ! DASHBOARD PAGE WILL SHOW USERS PLAYDATES TO CREATE, UPDATE, AND DELETE
+// DASHBOARD PAGE WILL SHOW USERS PLAYDATES TO CREATE NEW, UPDATE, AND DELETE
 
 // CREATE button for new playdate form
 const createButtonHandler = async (event) => {

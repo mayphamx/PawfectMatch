@@ -1,32 +1,35 @@
 [
   {
     "pet_name": "Bubba",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 3,
     "breed": "Tabby",
     "personality": "lazy",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 1
   },
   {
     "pet_name": "Max",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 5,
     "breed": "Labrador",
     "personality": "energetic",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 2
   },
   {
     "pet_name": "Whiskers",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 2,
     "breed": "Persian",
     "personality": "playful",
     "vaccinated": false,
     "photo": null,
+    "location": "Austin",
     "user_id": 3
   },
   {
@@ -37,6 +40,7 @@
     "personality": "friendly",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 4
   },
   {
@@ -47,6 +51,7 @@
     "personality": "independent",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 1
   },
   {
@@ -57,6 +62,7 @@
     "personality": "protective",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 2
   },
   {
@@ -67,6 +73,7 @@
     "personality": "affectionate",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 3
   },
   {
@@ -77,6 +84,7 @@
     "personality": "curious",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 4
   },
   {
@@ -87,6 +95,7 @@
     "personality": "gentle",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 1
   },
   {
@@ -97,6 +106,7 @@
     "personality": "playful",
     "vaccinated": false,
     "photo": null,
+    "location": "Austin",
     "user_id": 2
   },
   {
@@ -107,6 +117,7 @@
     "personality": "adventurous",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 3
   },
   {
@@ -117,6 +128,7 @@
     "personality": "cuddly",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 4
   },
   {
@@ -127,6 +139,7 @@
     "personality": "quirky",
     "vaccinated": true,
     "photo": null,
+    "location": "Austin",
     "user_id": 1
   }
 ]

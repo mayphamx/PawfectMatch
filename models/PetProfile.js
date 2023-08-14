@@ -38,6 +38,11 @@ PetProfile.init(
     photo: {
       type: DataTypes.STRING, // ! check MULTER docs
       allowNull: true,
+    },    
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: false,
     },
     user_id: {
       type: DataTypes.INTEGER,

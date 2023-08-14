@@ -8,7 +8,6 @@ class User extends Model {
   }
 }
 
-// ! add user input for pets
 User.init(
   {
     id: {
@@ -35,11 +34,6 @@ User.init(
       validate: {
         len: [5],
       },
-    },
-    location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: false,
     },
   },
   {

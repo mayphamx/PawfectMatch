@@ -2,25 +2,21 @@
   {
     "user_name": "May",
     "email": "May@hotmail.com",
-    "password": "password12345",
-    "location": "Austin, Texas"
+    "password": "password12345"
   },
   {
     "user_name": "Ty",
     "email": "ty@gmail.com",
-    "password": "123password",
-    "location": "Austin, Texas"
+    "password": "123password"
   },
   {
     "user_name": "Dahlia",
     "email": "Dahlia@aol.com",
-    "password": "password",
-    "location": "Bryan, Texas"
+    "password": "password"
   },
   {
     "user_name": "Jonathan",
     "email": "Jonathan@aol.com",
-    "password": "password111",
-    "location": "Austin, Texas"
+    "password": "password111"
   }
 ]
