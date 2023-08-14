@@ -34,7 +34,7 @@
   },
   {
     "pet_name": "Buddy",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 7,
     "breed": "Golden Retriever",
     "personality": "friendly",
@@ -45,7 +45,7 @@
   },
   {
     "pet_name": "Luna",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 1,
     "breed": "Siamese",
     "personality": "independent",
@@ -56,7 +56,7 @@
   },
   {
     "pet_name": "Rocky",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 4,
     "breed": "German Shepherd",
     "personality": "protective",
@@ -67,7 +67,7 @@
   },
   {
     "pet_name": "Oliver",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 6,
     "breed": "Maine Coon",
     "personality": "affectionate",
@@ -78,7 +78,7 @@
   },
   {
     "pet_name": "Bailey",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 3,
     "breed": "Beagle",
     "personality": "curious",
@@ -89,7 +89,7 @@
   },
   {
     "pet_name": "Milo",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 4,
     "breed": "Ragdoll",
     "personality": "gentle",
@@ -100,7 +100,7 @@
   },
   {
     "pet_name": "Daisy",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 2,
     "breed": "Poodle",
     "personality": "playful",
@@ -111,7 +111,7 @@
   },
   {
     "pet_name": "Simba",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 1,
     "breed": "Bengal",
     "personality": "adventurous",
@@ -122,7 +122,7 @@
   },
   {
     "pet_name": "Charlie",
-    "catdog": "dog",
+    "animal": "dog",
     "age": 8,
     "breed": "Dachshund",
     "personality": "cuddly",
@@ -133,7 +133,7 @@
   },
   {
     "pet_name": "Cleo",
-    "catdog": "cat",
+    "animal": "cat",
     "age": 5,
     "breed": "Sphynx",
     "personality": "quirky",

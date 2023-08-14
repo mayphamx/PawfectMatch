@@ -3,29 +3,45 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Homepage</title>
+  <title>PAWFECT MATCH</title>
   <link rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pawfect Match</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/dist/output.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-{{!-- {{{ body }}} --}}
-<!-- --------------------------------------------pet dates form handlebars START -->
-<h3>Homepage</h3>
-        <button class="btn" type="submit">Login</button> 
-        <H2>or</H2>        <button class="btn" type="submit">Chat</button>         <button class="btn" type="submit">Dashboard</button> 
-        <button class="btn" type="submit">Log Out</button> 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-<button class="btn" type="submit">Click on Event</button> 
-                
 
-  </section>
-<script src='/js/User.js'></script>
-<script src='/js/PlayDate.js'></script>
-<!-- --------------------------------------------pet profile form handlebars END -->
-{{{ body }}}
+  <h3>PAWFECT MATCH</h3>
+
+  <nav>
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    <button class="btn" type="submit">Chat</button>         
+    <button class="btn" type="submit">Dashboard</button> 
+    {{else}}
+    <a href="/login"><button class="btn" type="submit">Login</button></a>
+    <a href="/signup"><button class="btn" type="submit">Signup</button></a>
+    {{/if}}
+  </nav>
+
+  <main>
+
+    {{!-- ! INSERTS OTHER HANDLEBARS ! --}}
+    {{{ body }}}
+
+    <script src='/js/User.js'></script>
+
+  </main>
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 </body>
 </html>
