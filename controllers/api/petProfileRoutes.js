@@ -2,11 +2,28 @@ const router = require('express').Router();
 const { PetProfile} = require('../../models');
 const withAuth = require("../../utils/auth");
 
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
+
+// // CREATE petprofile
+//   router.post('/form', withAuth, async (req, res) => {
+//     try {
+//       const profileData = await PetProfile.create({
+//         ...req.body, 
+//         user_id: req.session.user_id
+//       });
+//       res.status(200).json({profileData, message: 'Successfully created petprofile!'});
+//     } catch (err) {
+//       res.status(400).json(err);
+//     }
+//   });
+
 // CREATE petprofile
-  router.post('/', withAuth, async (req, res) => {
+  router.post('/form', withAuth, upload.single('photo'), async (req, res) => {
     try {
       const profileData = await PetProfile.create({
         ...req.body, 
+        ...req.photo,
         user_id: req.session.user_id
       });
       res.status(200).json({profileData, message: 'Successfully created petprofile!'});
@@ -15,21 +32,28 @@ const withAuth = require("../../utils/auth");
     }
   });
 
-// // GET a profile by profile ID
-// router.get('/:id', async (req, res) => {
-//   try {
-//     const profileData = await PetProfile.findByPk(req.params.id, {
-//       include: [{ model: PlayDate }]
-//     });
-//     res.status(200).json(profileData);
-//     if(!profileData) {
-//       res.status(404).json({ message: 'No profile found with this ID'});
-//       return;
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-//   });
+// // MULTER UPLOAD PHOTO
+// const express = require('express')
+// const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
 
+// const app = express()
+
+// app.post('/uploadphotoform', upload.single('avatar'), function (req, res, next) {
+//   req.file is the `avatar` file
+//   req.body will hold the text fields, if there were any
+// })
+
+// app.post('/uploadphotoform', upload.single('avatar'), withAuth, async (req, res) => {
+//   try {
+//     const profileData = await PetProfile.create({
+//       ...req.photo, 
+//       user_id: req.session.user_id
+//     });
+//     res.status(200).json({profileData, message: 'Successfully uploaded photo!'});
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 module.exports = router;

@@ -73,7 +73,7 @@ router.get('/editplaydate/:id', async (req, res) => {
 
 // ?? WITH AUTH ??
 // GET a petprofile form
-router.get('/petprofileform', async (req, res) => {
+router.get('/petprofile/form', async (req, res) => {
   
   res.render('petprofileform', {
     logged_in: req.session.logged_in
