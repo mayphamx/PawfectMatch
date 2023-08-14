@@ -15,25 +15,25 @@ PetProfile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    catdog: {
+    animal: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     breed: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     personality: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     vaccinated: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
     photo: {
       type: DataTypes.STRING, // ! check MULTER docs

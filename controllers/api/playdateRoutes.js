@@ -23,14 +23,12 @@ const withAuth = require('../../utils/auth');
 // CREATE new playdate
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newPlayDate = await PlayDate.create({
+    const playdateData = await PlayDate.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    console.log('New playdate created:', newPlayDate);
-
-    res.status(200).json({newPlayDate, message:'Successfully created a new playdate!'});
+    res.status(200).json({playdateData, message:'Successfully created a new playdate!'});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -50,14 +48,14 @@ router.put('/:id', withAuth, async (req, res) => {
     //   return res.status(404).json({ message: 'Playdate not found!' });
     // }
 
-    const updatedPlaydate = await PlayDate.update(req.body, {
+    const playdateData = await PlayDate.update(req.body, {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    res.status(200).json({ updatedPlaydate, message: 'Successfully updated playdate' });
+    res.status(200).json({ playdateData, message: 'Successfully updated playdate!' });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -74,11 +72,11 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!playdateData) {
-      res.status(404).json({ message: 'No playdate found with this id!' });
+      res.status(404).json({message: 'No playdate found with this id!' });
       return;
     }
 
-    res.status(200).json({message:'Successfully deleted playdate!'});
+    res.status(200).json({playdateData, message:'Successfully deleted playdate!'});
   } catch (err) {
     res.status(500).json(err);
   }

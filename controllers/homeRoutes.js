@@ -54,6 +54,7 @@ router.get('/playdate/:id', async (req, res) => {
   }
 });
 
+// ?? WITH AUTH ??
 // GET/EDIT a playdate by ID
 router.get('/editplaydate/:id', async (req, res) => {
   try {
@@ -70,15 +71,17 @@ router.get('/editplaydate/:id', async (req, res) => {
   }
 });
 
-// GET a petprofile form (JOIN with user)
-router.get('/petprofile', async (req, res) => {
-
-    res.render('petprofileform', {
-      logged_in: req.session.logged_in
-    });
+// ?? WITH AUTH ??
+// GET a petprofile form
+router.get('/petprofile/form', async (req, res) => {
+  
+  res.render('petprofileform', {
+    logged_in: req.session.logged_in
+  });
 });
 
- // GET a petprofile by ID (JOIN with user)
+// ?? WITH AUTH ??
+ // GET a petprofile by ID (JOIN with user data)
 router.get('/petprofile/:id', async (req, res) => {
   try {
     const petprofileData = await PetProfile.findByPk(req.params.id, {
@@ -102,6 +105,7 @@ router.get('/petprofile/:id', async (req, res) => {
 });
 
 
+// GET Dashboard Route (JOIN with playdate data; create form)
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
@@ -144,9 +148,18 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// ?? WITH AUTH, logged_in: req.session.logged_in ??
+// ?? NEED post chat route in api routes folder ??
+// GET chat route
 router.get('/chat', (req, res) => {
-  // chat route
-  res.render("chat");
+  res.render('chat');
+});
+
+// ?? WITH AUTH, logged_in: req.session.logged_in ??
+// ?? NEED post chat route in api routes folder ??
+// GET chat route
+router.get('/chat/:id', (req, res) => {
+  res.render('chatroom');
 });
 
 module.exports = router;

@@ -42,7 +42,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 
-
+// app.post("/upload_files", uploadFiles);
+// function uploadFiles(req, res) {
+//     console.log(req.body);
+// }
 
 
 sequelize.sync({ force: false }).then(() => {

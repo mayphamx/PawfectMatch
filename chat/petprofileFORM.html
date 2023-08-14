@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MULTER UPLOAD PHOTO</title>
+  <link rel="stylesheet">
+</head>
+
+<body>
+
+<!-- --------------------------------------------pet profile form handlebars START -->
+<h2>CREATE A NEW PET PROFILE</h2>
+  <form class="form newpetprofile-form">
+    <!-- <action="/petprofile" method="post" enctype="multipart/form-data"> -->
+      <div class="form-group">
+        <label for="petprofile-name">Pet name: </label>
+        <input type= "text" id="petprofile-name" placeholder="Enter your pet's name" class="form-input"/>
+        <br>
+
+        <label for="petprofile-animal">Animal: </label>
+        <input type= "text" id="petprofile-animal" placeholder="Enter your pet animal" class="form-input"/>
+        <br>
+
+        <label for="petprofile-age">Age: </label>
+        <input type= "text" id="petprofile-age" placeholder="Enter your pet's age" class="form-input"/>
+        <br>
+
+        <label for="petprofile-breed">Breed: </label>
+        <input type= "text" id="petprofile-breed" placeholder="Enter your pet's breed" class="form-input"/>
+        <br>
+
+        <label for="petprofile-personality">Personality: </label>
+        <input type= "text" id="petprofile-personality" placeholder="Enter your pet's personality" class="form-input"/>
+        <br>
+
+        <label for="petprofile-vaccinated">Vaccinated: </label>
+        <input type= "text" id="petprofile-vaccinated" placeholder="Enter your pet's vaccination status' class="form-input"/>
+        <br>
+
+        <label for="petprofile-photo">Select files</label>
+        <input type="file" id="#petprofile-photo" class="form-input" >
+        <br>
+
+        <button class="btn" type="submit">CREATE</button> 
+      </div>
+  </form>
+
+<script src='/js/petprofile.js'></script>
+
+<!-- --------------------------------------------pet profile form handlebars END -->
+
+</body>
+</html>
