@@ -4,13 +4,15 @@
 const createButtonHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#playdate-name').value.trim();
-  const description = document.querySelector('#playdate-desc').value.trim();
+  const title = document.querySelector('#playdate-title').value.trim();
+  const date = document.querySelector('#playdate-date').value.trim();
+  const location = document.querySelector('#playdate-location').value.trim();
+  const description = document.querySelector('#playdate-description').value.trim();
 
-  if (name && description) {
-    const response = await fetch(`/api/playdates`, {
+  if (title && date && location) {
+    const response = await fetch(`/api/playdate`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({title, date, location, description}),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -50,7 +52,7 @@ const updButtonHandler = async (event) => {
   const description = document.querySelector('#playdate-desc').value.trim();
   const playdateID = event.target.getAttribute('data-id');
 
-  if (name && description &&playdateId) {
+  if (name && description && playdateID) {
     const response = await fetch(`/api/playdates/${playdateID}`, {
       method: 'PUT',
       body: JSON.stringify({name, description}),
@@ -72,7 +74,7 @@ document.querySelectorAll('playdate-update').forEach(button => {
 });
 
 
-document.querySelector('.newplaydate-form').addEventListener('submit', createButtonHandler);
+document.querySelector('.playdate-create').addEventListener('submit', createButtonHandler);
 
 document.querySelectorAll('playdate-delete').forEach(button => {
   button.addEventListener('click', delButtonHandler);
