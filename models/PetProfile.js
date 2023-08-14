@@ -15,7 +15,7 @@ PetProfile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    catdog: {
+    animal: {
       type: DataTypes.STRING,
       allowNull: false,
     },
