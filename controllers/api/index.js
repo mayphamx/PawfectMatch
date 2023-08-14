@@ -9,7 +9,7 @@ const playdateRoutes = require('./playdateRoutes');
 // login/logout page
 router.use('/users', userRoutes);
 // profile per pet
-router.use('/petprofile', petProfileRoutes);
+router.use('/petprofiles', petProfileRoutes);
 // comments page
 router.use('/comments', commentRoutes);
 // playdate page

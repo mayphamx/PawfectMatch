@@ -6,8 +6,9 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
 // CREATE petprofile
-  router.post('/form', withAuth, upload.single('photo'), async (req, res) => {
+  router.post('/', upload.single('photo'), async (req, res) => {
     try {
+      console.log(req.body);
       const profileData = await PetProfile.create({
         ...req.body, 
         ...req.photo,

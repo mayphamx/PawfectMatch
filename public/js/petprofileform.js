@@ -1,7 +1,7 @@
 // PET PROFILE FORM BUTTON
 const createPetButtonHandler = async (event) => {
   event.preventDefault();
-
+console.log(event);
   const pet_name = document.querySelector('#petprofile-name').value.trim();
   const animal = document.querySelector('#petprofile-animal').value.trim();
   const age = document.querySelector('#petprofile-age').value.trim();
@@ -21,9 +21,11 @@ const createPetButtonHandler = async (event) => {
         'Content-animal': 'application/json',
       },
     });
-
+console.log(response);
     if (response.ok) {
-      document.location.replace('/petprofile');
+      console.log(response);
+      // add id to redirect
+      document.location.replace('/petprofile' + );
     } else {
       alert('Failed to create petprofile');
     }
