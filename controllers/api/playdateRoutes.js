@@ -2,24 +2,6 @@ const router = require('express').Router();
 const { PlayDate, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// ! GET,POST,PUT, & DELETE PLAYDATE ROUTES !
-
-// // GET playdate by ID
-// router.get('/:id', async (req, res) => {
-// try {
-//   const playdateData = await PlayDate.findByPk(req.params.id, {
-//     include: [{ model: Comment }]
-//   });
-//   res.status(200).json(playdateData);
-//   if(!playdateData) {
-//     res.status(404).json({ message: 'No playdate found with this ID'});
-//     return;
-//   }
-// } catch (err) {
-//   res.status(500).json(err);
-// }
-// });
-
 // CREATE new playdate
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -37,17 +19,6 @@ router.post('/', withAuth, async (req, res) => {
 // UPDATE playdate by ID
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    // const affectedRowCount = await PlayDate.update(req.body, {
-    //   where: {
-    //     id: req.params.id,
-    //     user_id: req.session.user_id,
-    //   },
-    // });
-
-    // if (affectedRowCount[0] === 0) {
-    //   return res.status(404).json({ message: 'Playdate not found!' });
-    // }
-
     const playdateData = await PlayDate.update(req.body, {
       where: {
         id: req.params.id,

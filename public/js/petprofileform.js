@@ -25,8 +25,8 @@ const createPetButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      // document.location.replace('/dashboard');
-      alert('Successfully created petprofile')
+      document.location.replace('/petprofile');
+      // alert('Successfully created petprofile')
     } else {
       alert('Failed to create petprofile');
     }
