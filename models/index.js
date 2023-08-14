@@ -3,11 +3,11 @@ const PetProfile = require("./PetProfile");
 const PlayDate = require("./PlayDate");
 const Comment = require("./Comment");
 
-
+// ?? User has one pet profile
 // User has Many PetProfiles
-User.hasMany(PetProfile, {
-  foreignKey: "user_id",
-});
+// User.hasMany(PetProfile, {
+//   foreignKey: "user_id",
+// });
 
 // PetProfile belongs to one User
 PetProfile.belongsTo(User, {
@@ -34,7 +34,7 @@ Comment.belongsTo(PlayDate, {
   foreignKey: "playdate_id",
 });
 
-// One user can have multiple comments (in different events?)
+// One user can have multiple comments
 User.hasMany(Comment, {
   foreignKey: "user_id",
 });
@@ -43,8 +43,6 @@ User.hasMany(Comment, {
 Comment.belongsTo(User, {
   foreignKey: "user_id",
 });
-
-
 
 module.exports = {
   User,
