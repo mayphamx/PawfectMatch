@@ -1,21 +1,21 @@
 [
   {
-    "user_name": "May",
+    "username": "May",
     "email": "May@hotmail.com",
     "password": "password12345"
   },
   {
-    "user_name": "Ty",
+    "username": "Ty",
     "email": "ty@gmail.com",
     "password": "123password"
   },
   {
-    "user_name": "Dahlia",
+    "username": "Dahlia",
     "email": "Dahlia@aol.com",
     "password": "password"
   },
   {
-    "user_name": "Jonathan",
+    "username": "Jonathan",
     "email": "Jonathan@aol.com",
     "password": "password111"
   }

@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          // attributes: ['user_name'],
+          // attributes: ['username'],
         },
       ],
     });
@@ -74,13 +74,13 @@ router.get('/editplaydate/:id', async (req, res) => {
 // ?? WITH AUTH ??
 // GET a petprofile form
 router.get('/petprofile/form', async (req, res) => {
-  
   res.render('petprofileform', {
     logged_in: req.session.logged_in
   });
 });
 
 // ?? WITH AUTH ??
+// ??NOT BY ID BC ONE USER
  // GET a petprofile by ID (JOIN with user data)
 router.get('/petprofile/:id', async (req, res) => {
   try {
