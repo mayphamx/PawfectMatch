@@ -1,19 +1,23 @@
 <h2>SIGN INTO YOUR PROFILE</h2>
-  <form class="form newprofile-form">
 
-    <!-- <action="/petprofile" method="post" enctype="multipart/form-data"> -->
-      <div class="form-group">
-
-        <label for="email">Email: </label>
-        <input type= "text" id="email" placeholder="Enter your email" class="form-input"/>
-        <br>
-
-        <label for="password">Password: </label>
-        <input type= "text" id="password" placeholder="Enter your password" class="form-input"/>
-        <br>
-
-        <button class="btn" type="submit">Log In</button> 
-      </div>
-  </form>
+<form class="form login-form">
+  <!-- <action="/petprofile" method="post" enctype="multipart/form-data"> -->
+  <div class="form-group">
+    <label for="email-login">Email: </label>
+    <input type= "text" id="email-login" placeholder="Enter your email" class="form-input"/>
+  </div>
   
-<script src='/js/User.js'></script>
+  <div class="form-group"></div>
+    <label for="password-login">Password: </label>
+    <input type= "password" id="password-login" placeholder="Enter your password" class="form-input"/>
+  </div>
+    
+  <div class="form-group"></div>
+    <a href="/dashboard"> <button class="btn" type="submit">LOG IN</button></a>
+  </div>
+  <br>
+  <a href="/signup">SIGN UP INSTEAD </a>
+
+</form>
+  
+<script src='./js/login.js'></script>

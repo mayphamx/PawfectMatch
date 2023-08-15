@@ -1,19 +1,37 @@
-<h3>PLAY DATES/MESSAGE</h3>
-        <button class="btn" type="submit">Login</button> 
-        <H2>or</H2>        <button class="btn" type="submit">Chat</button>         <button class="btn" type="submit">Dashboard</button> 
-        <button class="btn" type="submit">Log Out</button> 
-        <br>
-<button class="btn" type="submit">Message Fluffy</button> 
-                
-<button class="btn" type="submit">log in to comment</button> 
+<h3>PLAYDATE/MESSAGE</h3>
 
-      <div class="form-group">
-        <label for="comment">Add a comment: </label>
-        <input type= "text" id="username" placeholder="Type comment here" class="form-input"/>
-        <button class="btn" type="submit">Send</button> 
-        <br>
-                
-  </section>
-  
-<script src='/js/User.js'></script>
-<script src='/js/PlayDate.js'></script>
+<section class="card">
+    <h3>{{title}}</h3>
+    <br>
+    <p>{{description}}</p>
+    <br>
+    <p>Location: {{location}}</p>
+    <p>Date Created: {{format_date}}</p>
+    {{!-- <p>Date Created: {{format_date date}}</p> --}}
+    <p>Post By: {{user.username}}</p>
+</section>
+
+{{#if logged_in}}
+  <button class="btn" type="submit">Message Fluffy</button> 
+
+  <form class="new-comment-form" data-blog_id={{id}}>
+      <label for="comment">COMMENT</label>
+      <input type="text" id="comment" placeholder="Type your comment here"/>
+      <button id="submit-comment">Submit Comment</button>
+  </form>
+{{else}}
+  <a href="/login">Log in to comment!</a>
+{{/if}}
+
+<h2>Comments</h2>
+
+  {{#each comments as |comment|}}
+<section class="card">
+  <p>{{comment.comment}}</p>
+  <p>{{comment.user.username}} {{format_date date_created}}</p>
+</section>
+  {{/each}}
+
+<script src='/js/user.js'></script>
+<script src='/js/playDate.js'></script>
+<script src="/js/comments.js"></script>
