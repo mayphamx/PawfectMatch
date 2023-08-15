@@ -1,3 +1,5 @@
+
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -11,92 +13,51 @@ const firebaseConfig = {
   measurementId: "G-ETT9N3LBPX"
 };
 
-
 firebase.initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+// initialize database
+const db = firebase.database();
 
-// Check if the user is authenticated
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    const messagesRef = db.collection("messages");
+// get user's data
+// const username = prompt("Please Tell Us Your Name");
 
-    const messageInput = document.getElementById("message-input");
-    const messageForm = document.getElementById("message-form");
-
-    messageForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const message = messageInput.value.trim();
-      if (message !== "") {
-        messagesRef.add({
-          username: user.displayName,
-          message: message,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(docRef => {
-          console.log("Message document added with ID: ", docRef.id);
-        })
-        .catch(error => {
-          console.error("Error adding message document: ", error);
-        });
-
-        messageInput.value = "";
-      }
-    });
-
-    messagesRef.orderBy("timestamp")
-      .onSnapshot(querySnapshot => {
-        querySnapshot.docChanges().forEach(change => {
-          if (change.type === "added") {
-            const messageData = change.doc.data();
-            const messageElement = document.createElement("li");
-            messageElement.textContent = `${messageData.username}: ${messageData.message}`;
-            document.getElementById("messages").appendChild(messageElement);
-          }
-        });
-      });
-  } else {
-    document.getElementById("chat-container").style.display = "none";
-    document.getElementById("login-prompt").style.display = "block";
-  }
-});
-
-// Submit form
+// submit form
+// listen for submit event on the form and call the postChat function
 document.getElementById("message-form").addEventListener("submit", sendMessage);
 
-// Send message to firestore
+// send message to db
 function sendMessage(e) {
   e.preventDefault();
 
+  // get values to be submitted
+  const timestamp = Date.now();
   const messageInput = document.getElementById("message-input");
-  const message = messageInput.value.trim();
+  const message = messageInput.value;
 
-  if (message !== "") {
-    db.collection("messages").add({
-      username: user.displayName,
-      message: message,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    })
-    .then(() => {
-      console.log("Message sent successfully.");
-      messageInput.value = "";
-    })
-    .catch(error => {
-      console.error("Error sending message: ", error);
-    });
-  }
+  // clear the input box
+  messageInput.value = "";
+
+  //auto scroll to bottom
+  document
+      .getElementById("messages")
+      .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+  // create db collection and send in the data
+  db.ref("messages/" + timestamp).set({
+      username,
+      message,
+  });
 }
 
-// Listen for new messages and display them
-db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
-  const messagesContainer = document.getElementById("messages");
-  messagesContainer.innerHTML = ""; // Clear previous messages
+// display the messages
+// reference the collection created earlier
+const fetchChat = db.ref("messages/");
 
-  snapshot.forEach(doc => {
-    const messageData = doc.data();
-    const messageElement = document.createElement("li");
-    messageElement.textContent = `${messageData.username}: ${messageData.message}`;
-    messagesContainer.appendChild(messageElement);
-  });
+// check for new messages using the onChildAdded event listener
+fetchChat.on("child_added", function (snapshot) {
+  const messages = snapshot.val();
+  const message = `<li class=${username === messages.username ? "sent" : "receive"
+      }><span>${messages.username}: </span>${messages.message}</li>`;
+  // append the message on the page
+  document.getElementById("messages").innerHTML += message;
 });
