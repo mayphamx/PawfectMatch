@@ -1,3 +1,5 @@
+
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -13,60 +15,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+// initialize database
+const db = firebase.database();
 
-// Check if the user is authenticated
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in, you can access the database
-    // Reference to the database collection for messages
-    const messagesRef = db.collection("messages");
-
-    // Reference to the input field and form
-    const messageInput = document.getElementById("message-input");
-    const messageForm = document.getElementById("message-form");
-
-    // Listen for form submission
-    messageForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const message = messageInput.value.trim();
-      if (message !== "") {
-        // Add the new message document to the "messages" collection
-        messagesRef.add({
-          username: user.displayName, // Assuming the user's display name is available
-          message: message,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(docRef => {
-          console.log("Message document added with ID: ", docRef.id);
-        })
-        .catch(error => {
-          console.error("Error adding message document: ", error);
-        });
-
-        // Clear the input field
-        messageInput.value = "";
-      }
-    });
-
-    // Listen for new messages using the onSnapshot event listener
-    messagesRef.orderBy("timestamp")
-      .onSnapshot(querySnapshot => {
-        querySnapshot.docChanges().forEach(change => {
-          if (change.type === "added") {
-            const messageData = change.doc.data();
-            const messageElement = document.createElement("li");
-            messageElement.textContent = `${messageData.username}: ${messageData.message}`;
-            document.getElementById("messages").appendChild(messageElement);
-          }
-        });
-      });
-  } else {
-    document.getElementById("chat-container").style.display = "none";
-    document.getElementById("login-prompt").style.display = "block";
-  }
-});
+// get user's data
+// const username = prompt("Please Tell Us Your Name");
 
 // submit form
 // listen for submit event on the form and call the postChat function
@@ -103,7 +56,7 @@ const fetchChat = db.ref("messages/");
 // check for new messages using the onChildAdded event listener
 fetchChat.on("child_added", function (snapshot) {
   const messages = snapshot.val();
-  const message = `<li class=${username === messages.username ? "sent" : "received"
+  const message = `<li class=${username === messages.username ? "sent" : "receive"
       }><span>${messages.username}: </span>${messages.message}</li>`;
   // append the message on the page
   document.getElementById("messages").innerHTML += message;

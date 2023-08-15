@@ -1,6 +1,12 @@
+{{!-- <div class="bg-cover bg-center bg-no-repeat" style="background-image: url('./photos/node\ js\ vector\ v1.png');">
+  This div has a background image.
+</div> --}}
+
+
+
 <div class="flex justify-center">
   <!-- Create Play Date Form -->
-  <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-96 mt-20">
 
     <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
 
@@ -31,14 +37,14 @@
       </div>
 
       <div class="flex justify-end">
-        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Create</button>
+        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600">Create</button>
       </div>
 
     </form>
   </div>
 
   <!-- Display User's Events -->
-  <div class="bg-white rounded-lg shadow-lg p-6 ml-8 w-96">
+  <div class="bg-white rounded-lg shadow-lg p-6 ml-8 w-96 mt-20">
     <h2 class="text-xl font-semibold mb-4">Your Events</h2>
     {{#if playdates.length}}
       <div class="col-md-6 ">
@@ -59,6 +65,7 @@
       </div>
     {{/if}}
   </div>
+
 </div>
 
 <script src="/js/dashboard.js"></script>

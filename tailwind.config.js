@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [],
   theme: {
@@ -19,4 +21,21 @@ module.exports = {
       "./node_modules/flowbite/**/*.js"
   ]
 
+}
+
+
+module.exports = {
+  theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      emerald: colors.emerald,
+      indigo: colors.indigo,
+      yellow: colors.yellow,
+      armypurple: colors.violet,
+    },
+  },
 }
