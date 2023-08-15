@@ -11,32 +11,26 @@ const firebaseConfig = {
   measurementId: "G-ETT9N3LBPX"
 };
 
+
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
-const chatContainer = document.getElementById("chatContainer");
-
 // Check if the user is authenticated
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in, you can access the database
-    // Reference to the database collection for messages
     const messagesRef = db.collection("messages");
 
-    // Reference to the input field and form
     const messageInput = document.getElementById("message-input");
     const messageForm = document.getElementById("message-form");
 
-    // Listen for form submission
     messageForm.addEventListener("submit", function(e) {
       e.preventDefault();
 
       const message = messageInput.value.trim();
       if (message !== "") {
-        // Add the new message document to the "messages" collection
         messagesRef.add({
-          username: user.displayName, // Assuming the user's display name is available
+          username: user.displayName,
           message: message,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         })
@@ -47,12 +41,10 @@ firebase.auth().onAuthStateChanged(function(user) {
           console.error("Error adding message document: ", error);
         });
 
-        // Clear the input field
         messageInput.value = "";
       }
     });
 
-    // Listen for new messages using the onSnapshot event listener
     messagesRef.orderBy("timestamp")
       .onSnapshot(querySnapshot => {
         querySnapshot.docChanges().forEach(change => {
@@ -70,43 +62,41 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-// submit form
-// listen for submit event on the form and call the postChat function
+// Submit form
 document.getElementById("message-form").addEventListener("submit", sendMessage);
 
-// send message to db
+// Send message to firestore
 function sendMessage(e) {
   e.preventDefault();
 
-  // get values to be submitted
-  const timestamp = Date.now();
   const messageInput = document.getElementById("message-input");
-  const message = messageInput.value;
+  const message = messageInput.value.trim();
 
-  // clear the input box
-  messageInput.value = "";
-
-  //auto scroll to bottom
-  document
-      .getElementById("messages")
-      .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-
-  // create db collection and send in the data
-  db.ref("messages/" + timestamp).set({
-      username,
-      message,
-  });
+  if (message !== "") {
+    db.collection("messages").add({
+      username: user.displayName,
+      message: message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+    .then(() => {
+      console.log("Message sent successfully.");
+      messageInput.value = "";
+    })
+    .catch(error => {
+      console.error("Error sending message: ", error);
+    });
+  }
 }
 
-// display the messages
-// reference the collection created earlier
-const fetchChat = db.ref("messages/");
+// Listen for new messages and display them
+db.collection("messages").orderBy("timestamp").onSnapshot(snapshot => {
+  const messagesContainer = document.getElementById("messages");
+  messagesContainer.innerHTML = ""; // Clear previous messages
 
-// check for new messages using the onChildAdded event listener
-fetchChat.on("child_added", function (snapshot) {
-  const messages = snapshot.val();
-  const message = `<li class=${username === messages.username ? "sent" : "received"
-      }><span>${messages.username}: </span>${messages.message}</li>`;
-  // append the message on the page
-  document.getElementById("messages").innerHTML += message;
+  snapshot.forEach(doc => {
+    const messageData = doc.data();
+    const messageElement = document.createElement("li");
+    messageElement.textContent = `${messageData.username}: ${messageData.message}`;
+    messagesContainer.appendChild(messageElement);
+  });
 });
