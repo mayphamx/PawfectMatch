@@ -1,37 +1,65 @@
 <div class="flex justify-center">
-    <!-- Create Play Date Form -->
-    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
-      <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
-      <form id="create-event-form" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Title</label>
-          <input type="text" name="title" class="mt-1 p-2 w-full border rounded-md" id ="playdate-title">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Date</label>
-          <input type="date" name="date" class="mt-1 p-2 w-full border rounded-md" id ="playdate-date">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Location</label>
-          <input type="text" name="location" class="mt-1 p-2 w-full border rounded-md" id ="playdate-location">
-        </div>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Description</label>
-          <textarea name="description" rows="3" class="mt-1 p-2 w-full border rounded-md" id ="playdate-description"></textarea>
-        </div>
-        <div class="flex justify-end">
-          <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 playdate-create">Create</button>
-        </div>
-      </form>
-    </div>
+  <!-- Create Play Date Form -->
+  <div class="bg-white rounded-lg shadow-lg p-6 w-96">
 
-    <!-- Display User's Events -->
-<div class="bg-white rounded-lg shadow-lg p-6 ml-8 w-96">
-  <h2 class="text-xl font-semibold mb-4">Your Events</h2>
-  <ul id="event-list" class="space-y-4 text-gray-700">
-    <!-- Events will be dynamically added here -->
-  </ul>
-</div>
+    <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
+
+    <form id="playdate-create" class="space-y-4">
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" name="title" class="mt-1 p-2 w-full border rounded-md" id="playdate-title">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Date</label>
+        <input type="date" name="date" class="mt-1 p-2 w-full border rounded-md" id="playdate-date">
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Location</label>
+        <select name="location" class="mt-1 p-2 w-full border rounded-md" id="playdate-location">
+        <option value="austin">Austin</option>
+        <option value="houston">Houston</option>
+        <option value="dallas">Dallas</option>
+      </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Description</label>
+        <textarea name="description" rows="3" class="mt-1 p-2 w-full border rounded-md" id="playdate-description"></textarea>
+      </div>
+
+      <div class="flex justify-end">
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Create</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Display User's Events -->
+  <div class="bg-white rounded-lg shadow-lg p-6 ml-8 w-96">
+    <h2 class="text-xl font-semibold mb-4">Your Events</h2>
+    {{#if playdates.length}}
+      <div class="col-md-6 ">
+        <h3>Current playdates:</h3>
+
+        {{#each playdates as |playdate|}}
+        <div class="row mb-2">
+          <div class="col-md-8">
+            <h4><a href="/playdate/{{playdate.id}}">{{playdate.title}}</a></h4>
+          </div>
+
+          <div class="col-md-4 ">
+            <button class="btn btn-sm btn-danger playdate-delete" data-id="{{playdate.id}}">DELETE</button>
+            <a href='/edit/{{playdate.id}}'>UPDATE</a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
 </div>
 
 <script src="/js/dashboard.js"></script>
+<script src="/js/playdate.js"></script>

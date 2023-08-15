@@ -73,7 +73,6 @@ document.querySelectorAll('playdate-update').forEach(button => {
   button.addEventListener('click', updButtonHandler);
 });
 
-
 document.querySelector('.playdate-create').addEventListener('submit', createButtonHandler);
 
 document.querySelectorAll('.playdate-delete').forEach(button => {

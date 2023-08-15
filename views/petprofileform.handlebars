@@ -2,37 +2,70 @@
   <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-semibold mb-4">CREATE A NEW PET PROFILE</h2>
     <form class="form newpetprofile-form space-y-4">
-      <div class="form-group">
-        <label for="petprofile-name" class="block text-sm font-medium text-gray-700">Pet name:</label>
-        <input type="text" id="petprofile-name" placeholder="Enter your pet's name" class="form-input">
-        
-        <label for="petprofile-animal" class="block text-sm font-medium text-gray-700">Animal:</label>
-        <input type="text" id="petprofile-animal" placeholder="Enter your pet animal" class="form-input">
-        
-        <label for="petprofile-age" class="block text-sm font-medium text-gray-700">Age:</label>
-        <input type="text" id="petprofile-age" placeholder="Enter your pet's age" class="form-input">
-        
-        <label for="petprofile-breed" class="block text-sm font-medium text-gray-700">Breed:</label>
-        <input type="text" id="petprofile-breed" placeholder="Enter your pet's breed" class="form-input">
-        
-        <label for="petprofile-personality" class="block text-sm font-medium text-gray-700">Personality:</label>
-        <input type="text" id="petprofile-personality" placeholder="Enter your pet's personality" class="form-input">
-        
-        <label for="petprofile-vaccinated" class="block text-sm font-medium text-gray-700">Vaccinated:</label>
-        <input type="text" id="petprofile-vaccinated" placeholder="Enter your pet's vaccination status" class="form-input">
-        
-        <input type="text" id="petprofile-location" placeholder="Enter your pet's location" class="form-input">
-        
-        <label for="petprofile-photo" class="block text-sm font-medium text-gray-700">Upload photo:</label>
-        <input type="file" id="petprofile-photo" class="form-input">
-        
-        <a href="/petprofile"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" type="submit">SUBMIT YOUR PET PROFILE</button></a>
 
+      <div class="form-group">
+        <label for="petprofile-name" class="form-input block text-sm font-medium text-gray-700">Pet name:</label>
+        <input type="text" id="petprofile-name" name="petprofile-name" placeholder="Enter your pet's name" class="form-input mt-1 p-2 w-full border rounded-md">
       </div>
+
+      <div class="form-group">
+        <label for="petprofile-animal" class="form-input block text-sm font-medium text-gray-700">Animal:</label>
+        <select id="petprofile-animal" name="petprofile-animal" placeholder="Enter your pet animal" class="form-input mt-1 p-2 w-full border rounded-md">
+          <option value="cat">Cat</option>
+          <option value="dog">Dog</option>
+          <option value="bird">Bird</option>
+          <option value="fish">Fish</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="guinea pig">Guinea Pig</option>
+          <option value="turtle">Turtle</option>
+          <option value="hamster">Hamster</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-age" class="form-input block text-sm font-medium text-gray-700">Age:</label>
+        <input type="number" id="petprofile-age" name="petprofile-age" placeholder="Enter your pet's age" class="form-input mt-1 p-2 w-full border rounded-md">
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-breed" class="form-input block text-sm font-medium text-gray-700">Breed:</label>
+        <input type="text" id="petprofile-breed" name="petprofile-breed" placeholder="Enter your pet's breed" class="form-input mt-1 p-2 w-full border rounded-md">
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-personality" class="form-input block text-sm font-medium text-gray-700">Personality:</label>
+        <input type="text" id="petprofile-personality" name="petprofile-personality" placeholder="Enter your pet's personality" class="form-input mt-1 p-2 w-full border rounded-md">
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-vaccinated" class="form-input block text-sm font-medium text-gray-700">Vaccinated:</label>
+        <select id="petprofile-vaccinated" name="petprofile-vaccinated" placeholder="Enter your pet's vaccination status" class="form-input mt-1 p-2 w-full border rounded-md">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-location" class="form-input block text-sm font-medium text-gray-700">Location:</label>
+        <select id="petprofile-location" name="petprofile-location"placeholder="Enter your pet's location" class="form-input mt-1 p-2 w-full border rounded-md">         
+          <option value="austin">Austin</option>
+          <option value="houston">Houston</option>
+          <option value="dallas">Dallas</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="petprofile-photo" class="form-input block text-sm font-medium text-gray-700">Upload photo:</label>
+        <input type="file" id="petprofile-photo" name="petprofile-photo" class="form-input mt-1 p-2 w-full border rounded-md">
+       </div>
+           
+      <div class="form-group">
+        <a href="/petprofile/{{petprofile.id}}"><button class="btn btn-primary" type="submit">SUBMIT YOUR PET PROFILE</button></a>
+      </div>
+      
     </form>
-  </div>
 
   <!-- Include Handlebars and your petprofile.js script -->
+  <script src="./js/petprofile.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-  <script src="/js/petprofileform.js"></script>
 

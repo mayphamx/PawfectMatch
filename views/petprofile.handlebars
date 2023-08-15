@@ -12,22 +12,24 @@
       <div class="text-center mt-10">
         <!-- User Information -->
         <h2 class="text-xl font-semibold">{{pet_name}}</h2>
-        <h2 class="text-gray-400 text-sm">{{location}}</h2>
+        {{!-- <h2 class="text-gray-400 text-sm">{{location}}</h2> --}}
+        <section class="card">
+          <h3 class="text-gray-400 text-sm">Animal: {{animal}}</h3>
+          <h3 class="text-gray-400 text-sm">Age: {{age}} years old</h3>
+          <h3 class="text-gray-400 text-sm">Breed: {{breed}}</h3>
+          <h3 class="text-gray-400 text-sm">Personality: {{personality}}</h3>
+          <h3 class="text-gray-400 text-sm">Vaccinated: {{vaccinated}}</h3>
+          <h3 class="text-gray-400 text-sm">Location: {{location}}</h3>
+        </section>
+        <!-- Profile by User Name -->
+        <div class="text-center text-black mt-10">
+          <p>Profile By {{user.username}}</p>
+        </div>
+
         <div class="text-center mt-10">
           <!-- Send Message Button -->
           <a href="new-message.html" class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">Send Message</a>
         </div>
-        <h3 class="mt-10 text-black font-semibold mb-3">PET PROFILE</h3>
-      </div>
-      <section class="card">
-        <p>Animal: {{animal}}</p>
-        <p>Age: {{age}} years old</p>
-        <p>Personality: {{personality}}</p>
-        <p>Vaccinated: {{vaccinated}}</p>
-      </section>
-      <!-- Profile by User Name -->
-      <div class="text-center text-black mt-10">
-        <p>Profile By {{user.username}}</p>
       </div>
     </div>
   </div>
