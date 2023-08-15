@@ -9,7 +9,6 @@ const upload = multer({ dest: 'uploads/' })
   router.post('/form', withAuth, upload.single('photo'), async (req, res) => {
     console.log("Session User Id",req.session.user_id);
     try {
-      console.log(req.body);
       const profileData = await PetProfile.create({
         ...req.body, 
         // ...req.photo,
