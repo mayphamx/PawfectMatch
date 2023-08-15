@@ -33,8 +33,7 @@ router.get('/playdate/:id', async (req, res) => {
     const playdateData = await PlayDate.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['user_name'],
+          model: User
         },
         {
           model: Comment,
@@ -44,6 +43,7 @@ router.get('/playdate/:id', async (req, res) => {
     });
 
     const playdate = playdateData.get({ plain: true });
+    console.log(playdate);
     
     res.render('playdate', {
       ...playdate,
@@ -52,6 +52,7 @@ router.get('/playdate/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+  console.log('test');
 });
 
 // ?? WITH AUTH ??
