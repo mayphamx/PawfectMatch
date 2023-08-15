@@ -66,24 +66,25 @@ pre {
 /* Text-level semantics
    ========================================================================== */
 
-
+   
    /* NAVBAR OVERALL COLOR */
-a {
-  background-color:#FF577F(255, 148, 85);
-}
-div {
-  background-color: #FF577F;
-}
-button {
-  background-color: #FF577F;
-}
-main{
-  background-color: #ffffff;
-}
-html{
-  background-image: ("logo.png");
-}
-
+   html{
+     background-color: ;
+     background-image: url("./photos/Turquoise\ Dogs\ and\ Paw\ Print\ Cute\ Virtual\ Background.png");
+   }
+   /* a {
+     background-color:#31C48D(255, 148, 85);
+     button-block: 
+    }
+    div {
+      background-color: #31C48D;
+    }
+    button {
+      background-color: #31C48D;
+    }
+    main{
+      background-color: #31C48D;
+    } */
 /**
  * 1. Remove the bottom border in Chrome 57-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -431,13 +432,13 @@ button {
   margin: 0;
 }
 
-a {
-  color: #c40000;
+a href {
+  color: #ec0000;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ff0000;
+  color: #151313;
   text-decoration: underline;
 }
 
