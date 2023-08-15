@@ -36,6 +36,10 @@ PlayDate.init(
       unique: false,
       },
     },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,
