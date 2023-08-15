@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 // sign up route default
 router.post('/signup', async (req, res) => {
+  console.log(req.body);
   try {
     const userData = await User.create(req.body);
 
@@ -43,7 +44,7 @@ router.post('/login', async (req, res) => {
       req.session.logged_in = true;
       
       res.json({ user: userData, message: 'You are now logged in!' });
-      res.redirect('/');
+      // res.redirect('/');
     });
 
   } catch (err) {

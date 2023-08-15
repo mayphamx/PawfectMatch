@@ -3,7 +3,7 @@
     <h2 class="text-2xl font-semibold mb-4">CREATE A NEW PET PROFILE</h2>
     <form class="form newpetprofile-form space-y-4">
       <div class="form-group">
-        <label for="petprofil6e-name" class="block text-sm font-medium text-gray-700">Pet name:</label>
+        <label for="petprofile-name" class="block text-sm font-medium text-gray-700">Pet name:</label>
         <input type="text" id="petprofile-name" placeholder="Enter your pet's name" class="form-input">
         
         <label for="petprofile-animal" class="block text-sm font-medium text-gray-700">Animal:</label>
@@ -21,15 +21,18 @@
         <label for="petprofile-vaccinated" class="block text-sm font-medium text-gray-700">Vaccinated:</label>
         <input type="text" id="petprofile-vaccinated" placeholder="Enter your pet's vaccination status" class="form-input">
         
+        <input type="text" id="petprofile-location" placeholder="Enter your pet's location" class="form-input">
+        
         <label for="petprofile-photo" class="block text-sm font-medium text-gray-700">Upload photo:</label>
         <input type="file" id="petprofile-photo" class="form-input">
         
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" type="submit">CREATE</button>
+        <a href="/petprofile"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" type="submit">SUBMIT YOUR PET PROFILE</button></a>
+
       </div>
     </form>
   </div>
 
   <!-- Include Handlebars and your petprofile.js script -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-  <script src="/js/petprofile.js"></script>
+  <script src="/js/petprofileform.js"></script>
 
