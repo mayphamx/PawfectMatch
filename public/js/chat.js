@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
 
+const chatContainer = document.getElementById("chatContainer");
+
 // Check if the user is authenticated
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
