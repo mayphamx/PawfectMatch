@@ -1,0 +1,16 @@
+<!-- Loop over each object in the projects array -->
+{{#each playdates as |playdate| }}
+<div class="row mb-4 playdate">
+  <div class="col-md-5">
+    <h2>
+      <a href="/playdate/{{playdate.id}}">{{playdate.title}}</a>
+    </h2>
+    <p>Created by {{playdate.user.username}} on {{format_date playdate.date}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{playdate.description}}
+    </p>
+  </div>
+</div>
+{{/each}}

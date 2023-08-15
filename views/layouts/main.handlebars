@@ -15,22 +15,21 @@
 
 <body>
 
-  <h3>PAWFECT MATCH</h3>
+  <h3><a href="/">PAWFECT MATCH</a></h3>
 
   <nav>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    <button class="btn" type="submit">Chat</button>         
-    <button class="btn" type="submit">Dashboard</button> 
+    {{#if logged_in}}
+    <a href="/dashboard">DASHBOARD</a>
+    <button id="logout" class="btn-no-style">LOGOUT</button>
+    <a href="/chat">CHAT</a>
+    <a href="/petprofile/{{user.id}}">PROFILE</a> 
     {{else}}
-    <a href="/login"><button class="btn" type="submit">Login</button></a>
-    <a href="/signup"><button class="btn" type="submit">Signup</button></a>
+    <a href="/login">LOGIN</a>
+    <a href="/signup">SIGN UP</a>
     {{/if}}
   </nav>
 
   <main>
-
-    {{!-- ! INSERTS OTHER HANDLEBARS ! --}}
     {{{ body }}}
 
   {{!-- {{#if loggedIn}}
@@ -38,8 +37,11 @@
 
   </main>
 
+  {{!-- {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}} --}}
 
-  {{!-- <script src='/js/User.js'></script> --}}
+  <script src='/js/user.js'></script> 
   <script src="/js/petprofileform.js"></script>
   <script src="/js/logout.js"></script>
   <script src="/js/login.js"></script>
