@@ -437,7 +437,7 @@ a {
 }
 
 a:hover {
-  color: #ff0000;
+  color: #0055ff;
   text-decoration: underline;
 }
 
@@ -916,7 +916,7 @@ a:hover {
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .text-black {
