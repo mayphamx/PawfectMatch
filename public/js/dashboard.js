@@ -1,5 +1,3 @@
-// DASHBOARD PAGE WILL SHOW USERS PLAYDATES TO CREATE NEW, UPDATE, AND DELETE
-
 // CREATE button for new playdate form
 const createButtonHandler = async (event) => {
   event.preventDefault();
@@ -9,7 +7,8 @@ const createButtonHandler = async (event) => {
   const location = document.querySelector('#playdate-location').value.trim();
   const description = document.querySelector('#playdate-description').value.trim();
 
-  if (title && date && location) {
+  
+  if (title && date && location && description) {
     const response = await fetch(`/api/playdate`, {
       method: 'POST',
       body: JSON.stringify({title, date, location, description}),
@@ -17,8 +16,11 @@ const createButtonHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-
+    
+    console.log(response);
     if (response.ok) {
+      const responseData = await response.json();
+      console.log("Response Data is This: " +  JSON.stringify(responseData));
       document.location.replace('/dashboard');
     } else {
       alert('Failed to create playdate');

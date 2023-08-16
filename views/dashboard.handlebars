@@ -4,7 +4,7 @@
 
     <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
 
-    <form id="playdate-create" class="space-y-4">
+    <form class="playdate-create space-y-4">
 
       <div>
         <label class="block text-sm font-medium text-gray-700">Title</label>
@@ -49,7 +49,7 @@
           <div class="col-md-8">
             <h4><a href="/playdate/{{playdate.id}}">{{playdate.title}}</a></h4>
           </div>
-
+        
           <div class="col-md-4 ">
             <button class="btn btn-sm btn-danger playdate-delete" data-id="{{playdate.id}}">DELETE</button>
             <a href='/edit/{{playdate.id}}'>UPDATE</a>
