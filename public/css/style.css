@@ -48,3 +48,10 @@ li.mr-2>p#about-tab {
   height: 7em;
   border-radius: 50%;
 }
+
+body>main>div>div.col-md-7>h1>a {
+  font-family: inter;
+  font-size: 2rem;
+  color: #6F61C0;
+  font-weight: 700;
+}
