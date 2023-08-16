@@ -1,37 +1,38 @@
-{{!-- <script type="text/x-handlebars-template" id="user-profile-template">
+{{!--
+<script type="text/x-handlebars-template" id="user-profile-template">
     <div class="flex justify-center mb-16 mt-16">
       <!-- Profile Picture -->
       <img src="{{photo}}" class="w-44 h-44 rounded-full">
     </div>
   </script> --}}
 
-  <div class="flex justify-center items-center">
-    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
-      <div class="text-center mt-6">
-        <!-- User Information -->
-        <h2 class="petnametitle">{{pet_name}}</h2>
-        {{!-- <h2 class="text-gray-400 text-sm">{{location}}</h2> --}}
-        <section class="card" id="petcard">
-          <h3>{{animal}}</h3>
-          <h3>{{age}} years old</h3>
-          <h3>Breed: {{breed}}</h3>
-          <h3>Personality: {{personality}}</h3>
-          <h3>Vaccinated: {{vaccinated}}</h3>
-          <h3>Located in: {{location}}</h3>
-          {{!-- <h3 class="text-gray-400 text-sm">Photo: {{photo}}</h3> --}}
-        </section>
-        <!-- Profile by User Name -->
-        <div class="text-center text-black mt-10">
-          <p>Owner: {{user.username}}</p>
-        </div>
+<div class="flex justify-center items-center">
+  <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+    <div class="text-center mt-6">
+      <!-- User Information -->
+      <h2 class="petnametitle">{{pet_name}}</h2>
+      {{!-- <h2 class="text-gray-400 text-sm">{{location}}</h2> --}}
+      <section class="card" id="petcard">
+        <h3>{{animal}}</h3>
+        <h3>{{age}} years old</h3>
+        <h3>Breed: {{breed}}</h3>
+        <h3>Personality: {{personality}}</h3>
+        <h3>Vaccinated: {{vaccinated}}</h3>
+        <h3>Located in: {{location}}</h3>
+        {{!-- <h3 class="text-gray-400 text-sm">Photo: {{photo}}</h3> --}}
+      </section>
+      <!-- Profile by User Name -->
+      <div class="text-center text-black mt-10">
+        <p>Owner: {{user.username}}</p>
+      </div>
 
-        <div class="text-center mt-10">
-          <!-- Send Message Button -->
-          <a href="/pages/chatroom.html" class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">Send Message</a>
-        </div>
+      <div class="text-center mt-10">
+        <!-- Send Message Button -->
+        <a href="/pages/chatroom.html" class="px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600">Send
+          Message</a>
       </div>
     </div>
   </div>
+</div>
 
 <script src="/js/petprofile.js"></script>
-

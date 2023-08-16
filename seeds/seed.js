@@ -3,7 +3,7 @@ const { User, PetProfile, PlayDate, Comment } = require("../models");
 const userData = require("./userData.json");
 const petprofileData = require("./petprofileData.json");
 const playdateData = require("./playdateData.json");
-const commentData = require("./commentData.json");
+const commentData = require("./commentsData.json");
 
 
 const seedDatabase = async () => {
