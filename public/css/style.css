@@ -31,3 +31,9 @@ main {
 form .form-input {
   color: #3d4547;
 }
+
+#corgiLogo {
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+}
