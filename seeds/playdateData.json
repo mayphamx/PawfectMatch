@@ -20,8 +20,8 @@
     "location": "Zilker Park",
     "description": "Join us for a fun day of play at Zilker Park! We'll have frisbees, balls, and treats for all the furry attendees.",
     "date": "2023-08-20T10:00:00Z",
-    "user_id": 3,
-    "username": "Dahlia"
+    "user_id": 4,
+    "username": "May"
   },
   {
     "title": "Canine Carnival",
@@ -29,14 +29,14 @@
     "description": "Step right up to the Canine Carnival! There will be games, prizes, and lots of tail-wagging fun for all dogs.",
     "date": "2023-09-05T11:00:00Z",
     "user_id": 4,
-    "username": "Jonathan"
+    "username": "May"
   },
   {
     "title": "Pup Picnic",
     "location": "Pease Park",
     "description": "Pack your favorite treats and join us for a laid-back picnic at Pease Park. Dogs and humans alike are welcome to relax and enjoy.",
     "date": "2023-09-10T12:00:00Z",
-    "user_id": 5,
+    "user_id": 1,
     "username": "Lily"
   },
   {
@@ -44,15 +44,15 @@
     "location": "Austin Pet Expo",
     "description": "Celebrate Barktoberfest at the Austin Pet Expo! Enjoy pet-friendly vendors, contests, and more.",
     "date": "2023-10-02T13:00:00Z",
-    "user_id": 6,
-    "username": "Alex"
+    "user_id": 3,
+    "username": "May"
   },
   {
     "title": "Paws & Paint",
     "location": "Art Studio",
     "description": "Unleash your pet's inner artist at our Paws & Paint event. We'll provide the paint, canvases, and plenty of fun!",
     "date": "2023-10-15T14:00:00Z",
-    "user_id": 7,
+    "user_id": 1,
     "username": "Oliver"
   },
   {
@@ -76,8 +76,8 @@
     "location": "Downtown Austin",
     "description": "Join us for a festive Thanksgiving Pawrade through downtown Austin! Dress up your pets in holiday-themed attire and spread cheer.",
     "date": "2023-11-25T17:00:00Z",
-    "user_id": 10,
-    "username": "Emma"
+    "user_id": 3,
+    "username": "May"
   },
   {
     "title": "Jingle Paws 5K",
@@ -92,7 +92,7 @@
     "location": "Snowy Meadows Park",
     "description": "Celebrate the winter season at the Frosty Paws Winter Wonderland. Enjoy snow, games, and hot cocoa for both humans and pets!",
     "date": "2023-12-25T19:00:00Z",
-    "user_id": 12,
+    "user_id": 4,
     "username": "Ava"
   },
   {

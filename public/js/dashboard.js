@@ -6,18 +6,22 @@ const createButtonHandler = async (event) => {
   const date = document.querySelector('#playdate-date').value.trim();
   const location = document.querySelector('#playdate-location').value.trim();
   const description = document.querySelector('#playdate-description').value.trim();
+  const username = document.querySelector('#playdate-username').value.trim();
 
-  
-  if (title && date && location && description) {
+  if (title && date && location && description && username) {
     const response = await fetch(`/api/playdate`, {
       method: 'POST',
-      body: JSON.stringify({title, date, location, description}),
+      body: JSON.stringify({
+        title,
+        date, 
+        location, 
+        description,
+        username}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
     
-    console.log(response);
     if (response.ok) {
       const responseData = await response.json();
       console.log("Response Data is This: " +  JSON.stringify(responseData));
@@ -31,10 +35,10 @@ const createButtonHandler = async (event) => {
 // DELETE button for existing playdates
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
-    const playdateID = event.target.getAttribute('data-id');
+    const id = event.target.getAttribute('data-id');
 
 
-    const response = await fetch(`/api/playdates/${playdateID}`, {
+    const response = await fetch(`/api/playdate/${id}`, {
       method: 'DELETE',
     });
 
@@ -46,34 +50,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-/// UPDATE button for existing playdate form
-const updButtonHandler = async (event) => {
-  event.preventDefault();
-
-  const name = document.querySelector('#playdate-name').value.trim();
-  const description = document.querySelector('#playdate-desc').value.trim();
-  const playdateID = event.target.getAttribute('data-id');
-
-  if (name && description && playdateID) {
-    const response = await fetch(`/api/playdates/${playdateID}`, {
-      method: 'PUT',
-      body: JSON.stringify({name, description}),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to update playdate');
-    }
-  }
-};
-
-document.querySelectorAll('playdate-update').forEach(button => {
-  button.addEventListener('click', updButtonHandler);
-});
 
 document.querySelector('.playdate-create').addEventListener('submit', createButtonHandler);
 
