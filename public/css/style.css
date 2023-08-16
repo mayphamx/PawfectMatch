@@ -7,17 +7,8 @@ html {
   background-image: url("./photos/Turquoise\ Dogs\ and\ Paw\ Print\ Cute\ Virtual\ Background.png");
 }
 
-a {
-  background-color: #FFF3DA(255, 148, 85);
-
-}
-
-div {
+nav {
   background-color: #85cad0;
-}
-
-button {
-  background-color: #FF577F;
 }
 
 main {
@@ -30,4 +21,16 @@ main {
 
 form .form-input {
   color: #3d4547;
+}
+
+a {
+  background-color: #FFF3DA(255, 148, 85);
+}
+
+button {
+  background-color: #FF577F;
+}
+
+li.mr-2>p#about-tab {
+  background-color: transparent;
 }
