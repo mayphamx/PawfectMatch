@@ -1,5 +1,5 @@
 body {
-  background-color: #f3f2f3;
+  background-color: #85cad0cf;
   margin: 0;
   padding: 0;
 }
@@ -15,7 +15,7 @@ header {
 li {
   list-style-type: none;
   margin-bottom: 10px;
-  background-color: #6929ca;
+  background-color: #1B6B93;
   padding: 5px;
   border-radius: 10px;
   color: white;
@@ -25,7 +25,7 @@ li {
 li span {
   font-style: italic;
   font-weight: bolder;
-  color: #b5b0b9;
+  color: #f08100;
 }
 
 #chat {
@@ -39,7 +39,7 @@ li span {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #b7b5b9;
+  background-color: #6F61C0;
 }
 
 input {
@@ -54,11 +54,27 @@ button {
 
 .sent {
   text-align: right;
-  background-color: #a79cb3;
+  background-color: #AA77FF;
   margin-left: 50%;
 }
 
 .sent span {
   margin-left: 5px;
-  color: #6929ca;
+  color: #070707;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+}
+
+#navbar-default.navBKG {
+  background-color: #A084E8;
+  text-align: center;
+  margin: 8%;
+  font-family: inter;
+  font-weight: 700;
 }
