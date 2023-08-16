@@ -13,7 +13,8 @@ nav {
 }
 
 main {
-  background-color: #85cad0;
+  background-color: #85cad0d6;
+  padding: 3%;
 }
 
 #navbar-default.navBKG {
