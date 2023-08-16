@@ -2,15 +2,32 @@ const router = require('express').Router();
 const { PlayDate, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
+router.get('/:id', async (req, res) => {
+  try {
+    const playdateData = await Playdate.findByPk(req.params.id, {
+      include: [{ model: Comment }]
+    });
+    res.status(200).json(playdateData);
+    if(!playdateData) {
+      res.status(404).json({ message: 'No blog found with this ID'});
+      return;
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  });
+
 // CREATE new playdate
 router.post('/', withAuth, async (req, res) => {
   try {
-    const playdateData = await PlayDate.create({
+    const newPlaydate = await PlayDate.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json({playdateData, message:'Successfully created a new playdate!'});
+    console.log('New Playdate created:', newPlaydate);
+
+    res.status(200).json({newPlaydate, message:'Successfully created a new playdate!'});
   } catch (err) {
     res.status(400).json(err);
   }

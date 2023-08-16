@@ -16,12 +16,13 @@ PetProfile.belongsTo(User, {
 
 // User can host many Playdates
 User.hasMany(PlayDate, {
-  foreignKey: "host_id",
+  foreignKey: "user_id",
+  onDelete:'CASCADE'
 });
 
-//Playdate is hosted by one user
+//Playdate is usered by one user
 PlayDate.belongsTo(User, {
-  foreignKey: "host_id",
+  foreignKey: "user_id",
 });
 
 // Playdate has many comments

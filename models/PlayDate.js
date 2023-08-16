@@ -18,7 +18,6 @@ PlayDate.init(
     date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     location: {
       type: DataTypes.STRING,
@@ -26,19 +25,19 @@ PlayDate.init(
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
       model: "user",
       key: "id",
-      unique: false,
+      // unique: false,
       },
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
   },
   {

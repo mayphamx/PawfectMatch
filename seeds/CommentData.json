@@ -3,24 +3,48 @@
     "comment": "This is great! See you all at the park",
     "user_id": 1,
     "playdate_id": 1,
-    "date_created": "2023-08-10T08:00:00Z"
+    "date_created": "2023-07-10T08:00:00Z"
   },
   {
     "comment": "Looking forward to meeting everyone and having a blast!",
     "user_id": 2,
     "playdate_id": 1,
-    "date_created": "2023-08-10T09:00:00Z"
+    "date_created": "2023-08-15T09:00:00Z"
   },
   {
     "comment": "My dog is super excited for this playdate. Can't wait to see all the furry friends!",
     "user_id": 3,
     "playdate_id": 1,
-    "date_created": "2023-08-10T10:00:00Z"
+    "date_created": "2023-08-16T10:00:00Z"
   },
   {
     "comment": "Central Park is such a nice spot for playdates. Looking forward to making new friends!",
     "user_id": 4,
     "playdate_id": 1,
+    "date_created": "2023-08-22T11:00:00Z"
+  },
+  {
+    "comment": "This is great! See you all at the park",
+    "user_id": 1,
+    "playdate_id": 2,
+    "date_created": "2023-08-10T08:00:00Z"
+  },
+  {
+    "comment": "Looking forward to meeting everyone and having a blast!",
+    "user_id": 2,
+    "playdate_id": 2,
+    "date_created": "2023-08-10T09:00:00Z"
+  },
+  {
+    "comment": "My dog is super excited for this playdate. Can't wait to see all the furry friends!",
+    "user_id": 3,
+    "playdate_id": 2,
+    "date_created": "2023-08-10T10:00:00Z"
+  },
+  {
+    "comment": "Central Park is such a nice spot for playdates. Looking forward to making new friends!",
+    "user_id": 4,
+    "playdate_id": 2,
     "date_created": "2023-08-10T11:00:00Z"
   }
 ]

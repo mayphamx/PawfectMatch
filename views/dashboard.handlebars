@@ -4,34 +4,39 @@
 
     <h2 class="text-xl font-semibold mb-4">Create Play Date</h2>
 
-    <form id="playdate-create" class="space-y-4">
+    <form class="form playdate-create space-y-4">
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Title</label>
-        <input type="text" name="title" class="mt-1 p-2 w-full border rounded-md" id="playdate-title">
+      <div class="form-group">
+        <label for="playdate-title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" name="playdate-title" class="mt-1 p-2 w-full border rounded-md" id="playdate-title">
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Date</label>
-        <input type="date" name="date" class="mt-1 p-2 w-full border rounded-md" id="playdate-date">
+      <div class="form-group">
+        <label for="playdate-date" class="block text-sm font-medium text-gray-700">Date</label>
+        <input type="date" name="playdate-date" class="mt-1 p-2 w-full border rounded-md" id="playdate-date">
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Location</label>
-        <select name="location" class="mt-1 p-2 w-full border rounded-md" id="playdate-location">
+      <div class="form-group">
+        <label for="playdate-username" class="block text-sm font-medium text-gray-700">Host: </label>
+        <input type="text" name="playdate-username" class="mt-1 p-2 w-full border rounded-md" id="playdate-username">
+      </div>
+
+      <div class="form-group">
+        <label for="playdate-location" class="block text-sm font-medium text-gray-700">Location</label>
+        <select name="playdate-location" class="mt-1 p-2 w-full border rounded-md" id="playdate-location">
         <option value="austin">Austin</option>
         <option value="houston">Houston</option>
         <option value="dallas">Dallas</option>
       </select>
       </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Description</label>
-        <textarea name="description" rows="3" class="mt-1 p-2 w-full border rounded-md" id="playdate-description"></textarea>
-      </div>
+      <div class="form-group">
+        <label for="playdate-description" class="block text-sm font-medium text-gray-700">Description</label>
+        <textarea name="playdate-description" rows="3" class="mt-1 p-2 w-full border rounded-md" id="playdate-description"></textarea>
+      </div >
 
-      <div class="flex justify-end">
-        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600">Create</button>
+      <div class="flex justify-end form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
       </div>
 
     </form>
@@ -42,17 +47,16 @@
     <h2 class="text-xl font-semibold mb-4">Your Events</h2>
     {{#if playdates.length}}
       <div class="col-md-6 ">
-        <h3>Current playdates:</h3>
 
         {{#each playdates as |playdate|}}
         <div class="row mb-2">
           <div class="col-md-8">
             <h4><a href="/playdate/{{playdate.id}}">{{playdate.title}}</a></h4>
           </div>
-
-          <div class="col-md-4 ">
+        
+          <div class="col-md-1 ">
             <button class="btn btn-sm btn-danger playdate-delete" data-id="{{playdate.id}}">DELETE</button>
-            <a href='/edit/{{playdate.id}}'>UPDATE</a>
+            {{!-- <a href='/edit/{{playdate.id}}'>UPDATE</a> --}}
           </div>
         </div>
         {{/each}}
@@ -63,4 +67,4 @@
 </div>
 
 <script src="/js/dashboard.js"></script>
-<script src="/js/playdate.js"></script>
+{{!-- <script src="/js/playdate.js"></script> --}}
