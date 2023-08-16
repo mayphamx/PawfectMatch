@@ -1,22 +1,29 @@
-<h2>CREATE A NEW PROFILE</h2>
-  <form class="form signup-form">
-    <!-- <action="/petprofile" method="post" enctype="multipart/form-data"> -->
-      <div class="form-group">
-        <label for="username">Username: </label>
-        <input type= "text" id="username-signup" placeholder="Create your username" class="form-input" />
-        <br>
+<form class="form login-form">
+  <!-- <action="/petprofile" method="post" enctype="multipart/form-data"> -->
+    <div class="form-group">
+      <label for="username">Username </label>
+      <input type= "text" id="username-login" placeholder="Create your username" class="form-input" />
 
-        <label for="email">Email: </label>
-        <input type= "text" id="email-signup" placeholder="Enter your email" class="form-input"/>
-        <br>
+    </div>
 
-        <label for="password">Password: </label>
-        <input type= "password" id="password-signup" placeholder="Choose your password" class="form-input"/>
-        <br>
+    <div class="form-group">
+      <label for="email">Email </label>
+      <input type= "text" id="email-signup" placeholder="Enter your email" class="form-input"/>
+    </div>
 
-        <a href="/petprofile/form"><button class="btn" type="submit">Create</button></a>
-      </div>
-  </form>
+    <div class="form-group">        
+      <label for="password">Password </label>
+      <input type= "password" id="password-signup" placeholder="Choose your password" class="form-input"/>
+    </div>
+    
+    <div class="form-group">
+      <a href="/petprofile/form"><button class="btn btn-primary" type="submit">SIGN UP</button></a>
+    </div>
+
+    <div class="form-group">
+      <a href="/login"> <button class="btn btn-primary" type="button">LOG IN  INSTEAD</button></a>
+    </div>
+</form>
 
 {{!-- <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
