@@ -10,20 +10,24 @@ const createPetButtonHandler = async (event) => {
   const vaccinated = document.querySelector('#petprofile-vaccinated').value.trim();
   const photo = document.querySelector('#petprofile-photo').value.trim();
   const location = document.querySelector('#petprofile-location').value.trim();
-  const petprofileId = event.target.getAttribute('data-id');
+  // const petprofileId = event.target.getAttribute('data-id');
 
 // required variables where allow null is false
   if (pet_name && animal) {
     const response = await fetch(`/api/petprofile/form`, {
       method: 'POST',
 // sends everything from models - allow null false
-      body: JSON.stringify({ pet_name, animal, age, breed, personality, vaccinated, photo, location, petprofileId}),
+      body: JSON.stringify({ pet_name, animal, age, breed, personality, vaccinated, photo, location}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
+      const responseData = await response.json();
+      console.log("Response Data is This: " +  JSON.stringify(responseData));
+      const petprofileId = responseData.profileData.id;
+      console.log("ID is: " + petprofileId);
       document.location.replace(`/petprofile/${petprofileId}`);
     } else {
       alert('Failed to create petprofile');

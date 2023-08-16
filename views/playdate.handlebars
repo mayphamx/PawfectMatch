@@ -1,109 +1,65 @@
-{{!-- <h3>PLAYDATE/MESSAGE</h3> --}}
-
-{{!-- <section class="card"> --}}
-    {{!-- <h3>{{title}}</h3> --}}
-    {{!-- <br> --}}
-    {{!-- <p>{{description}}</p> --}}
-    {{!-- <br> --}}
-    {{!-- <p>Location: {{location}}</p>
-    <p>Date Created: {{format_date date}}</p>
-    <p>Post By: {{username}}</p> --}}
-{{!-- </section> --}}
-
 <div class="w-full ml-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-        <li class="mr-2">
-            <p id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-tl-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Playdate Info</p>
-        </li>
-        {{!-- <li class="mr-2">
-            <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Services</button>
-        </li> --}}
-        {{!-- <li class="mr-2">
-            <button id="statistics-tab" data-tabs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">Facts</button>
-        </li> --}}
-    </ul>
-    <div id="defaultTabContent">
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-            <h3 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{title}}
-            </h3>
-            <p class="mb-3 text-gray-500 dark:text-gray-400">{{description}}</p>
-            <p class="mt-6 mb-1 text-gray-500 dark:text-gray-400">Location: {{location}}</p>
-            <p class="mb-1 text-gray-500 dark:text-gray-400">Date Created: {{format_date date}}</p>
-            <p class="mb-3 text-gray-500 dark:text-gray-400">Post By: {{username}}</p>
-        
-  {{#if logged_in}}
-  <button class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700" class="btn" type="submit">Message Fluffy<svg class="w-2.5 h-2.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-  </svg></button> 
 
-  {{else}}
-  <a href="/login" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">Log in to comment!</a>
-  {{/if}}
-{{!-- 
-            <a href="#" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
-                Learn more
-                <svg class="w-2.5 h-2.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                </svg>
-            </a> --}}
+  <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800"
+    id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+    <li class="mr-2">
+      <p id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-tl-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">Playdate Info</p>
+    </li>
+  </ul>
 
-        </div>
+  <div id="defaultTabContent">
+    <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel"
+      aria-labelledby="about-tab">
+
+      <h3 class="mb-3 text-3xl font-extrabold tracking-tight text-gray-900">{{title}}</h3>
+
+      <p class="mb-3 text-gray-500 dark:text-darkgray-400">{{description}}</p>
+
+      <p class="mt-6 mb-1 text-gray-500 dark:text-darkgray-400">Location: {{location}}</p>
+
+      <p class="mb-1 text-gray-500 dark:text-darkgray-400">Date: {{format_date date}}</p>
+
+      <p class="mb-3 text-gray-500 dark:text-darkgray-400">Playdate hosted by: {{username}}</p>
     </div>
-</div>
+  </div>
 
-{{!-- <h2>Comments</h2>
+  <section>
+    <!-- Comments will be added here dynamically -->
+    <ul id="comments-list">
+    </ul>
+  </section>
 
-  {{#each comments as |comment|}}
-<section class="card">
-  <p>{{comment.comment}}</p>
-  <p>{{comment.user.username}} {{format_date date_created}}</p>
-</section>
-  {{/each}} --}}
+    {{#if logged_in}}
+    <a href ="/chat"><button class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700" type="submit">Message<svg class="w-2.5 h-2.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"></path></svg></button></a>
 
-    {{!------------------------------------------------ --------------- --}}
+    <form class="new-comment-form" data-playdate_id={{id}}>
+      <div class="w-full mt-14 ml-6 mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+          <label for="comment" class="sr-only">Your comment</label>
+          <input type="text" id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 " placeholder="Write a comment..."></input>
+        </div>
 
-{{!-- {{#if logged_in}}
-  <button class="btn" type="submit">Message Fluffy</button> 
+        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+          <button id="submit-comment" type="submit" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">POST COMMENT</button>
+        </div>
 
-  <form class="new-comment-form" data-blog_id={{id}}>
-      <label for="comment">COMMENT</label>
-      <input type="text" id="comment" placeholder="Type your comment here"/>
-      <button id="submit-comment">Submit Comment</button>
-  </form>
-{{else}}
-  <a href="/login">Log in to comment!</a>
-{{/if}} --}}
+      </div>
+    </form>
 
-  {{!------------------------------------------------ --------------- --}}
+    <p class="ml-6 text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a></p>
 
-{{#if logged_in}}
-<form class="new-comment-form" data-blog_id={{id}}>
-   <div class="w-full mt-14 ml-6 mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-       <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
-           <label for="comment" class="sr-only">Your comment</label>
-           <textarea type="text" id="comment" rows="4" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 " placeholder="Write a comment..." required></textarea>
-       </div>
-       <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
-           <button id="submit-comment" type="submit" class="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
-               Post comment
-           </button>
-       </div>
-   </div>
-</form>
+    {{else}}
+    <a href="/login" class="inline-block p-4 text-blue-600 rounded-tl-lg ">LOG IN TO COMMENT</a>
+    {{/if}}
 
-<p class="ml-6 text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+    <h2 class="mt-8">COMMENTS</h2>
 
-{{!--  --}}
+    {{#each comments as |comment|}}
+    <section class="card">
+      <p>{{comment.comment}}</p>
+      <p>{{comment.user.username}} {{format_date date_created}}</p>
+    </section>
+    {{/each}}
 
-<h2 class="mt-8">Comments</h2>
-  {{#each comments as |comment|}}
-<section class="card">
-  <p>{{comment.comment}}</p>
-  <p>{{comment.user.username}} {{format_date date_created}}</p>
-</section>
-  {{/each}}
-  {{/if}}
 
-<script src='/js/user.js'></script>
-<script src='/js/playDate.js'></script>
-<script src="/js/comments.js"></script>
+    <script src="/js/comments.js"></script>
