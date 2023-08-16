@@ -18,5 +18,60 @@
     "username": "Jonathan",
     "email": "Jonathan@aol.com",
     "password": "password111"
+  },
+  {
+    "username": "Lily",
+    "email": "lily@email.com",
+    "password": "p@ssw0rd"
+  },
+  {
+    "username": "Alex",
+    "email": "alex@email.com",
+    "password": "securepass"
+  },
+  {
+    "username": "Oliver",
+    "email": "oliver@email.com",
+    "password": "pass123"
+  },
+  {
+    "username": "Grace",
+    "email": "grace@email.com",
+    "password": "gracepass"
+  },
+  {
+    "username": "Lucas",
+    "email": "lucas@email.com",
+    "password": "lucas321"
+  },
+  {
+    "username": "Emma",
+    "email": "emma@email.com",
+    "password": "emmapass"
+  },
+  {
+    "username": "Noah",
+    "email": "noah@email.com",
+    "password": "noahpassword"
+  },
+  {
+    "username": "Ava",
+    "email": "ava@email.com",
+    "password": "avapass123"
+  },
+  {
+    "username": "Ethan",
+    "email": "ethan@email.com",
+    "password": "ethanpass"
+  },
+  {
+    "username": "Sophia",
+    "email": "sophia@email.com",
+    "password": "sophiapass"
+  },
+  {
+    "username": "Mia",
+    "email": "mia@email.com",
+    "password": "miapassword"
   }
 ]

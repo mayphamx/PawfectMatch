@@ -10,8 +10,8 @@
   {
     "title": "Downtown Group Dog Walking",
     "location": "Central Park",
-    "description": "Interested in going for a walk downtown while meeting new friends? Meet in front of the Austin capital!",
-    "date": "2023-08-10T08:00:00Z",
+    "description": "Interested in going for a walk downtown while making new friends? Meet in front of the Austin capital!",
+    "date": "2023-08-15T09:00:00Z",
     "user_id": 2,
     "username": "Ty"
   },
@@ -19,8 +19,97 @@
     "title": "Paws in the Park",
     "location": "Zilker Park",
     "description": "Join us for a fun day of play at Zilker Park! We'll have frisbees, balls, and treats for all the furry attendees.",
-    "date_created": "2023-08-10T08:00:00Z",
+    "date": "2023-08-20T10:00:00Z",
     "user_id": 3,
     "username": "Dahlia"
+  },
+  {
+    "title": "Canine Carnival",
+    "location": "Barton Springs Dog Park",
+    "description": "Step right up to the Canine Carnival! There will be games, prizes, and lots of tail-wagging fun for all dogs.",
+    "date": "2023-09-05T11:00:00Z",
+    "user_id": 4,
+    "username": "Jonathan"
+  },
+  {
+    "title": "Pup Picnic",
+    "location": "Pease Park",
+    "description": "Pack your favorite treats and join us for a laid-back picnic at Pease Park. Dogs and humans alike are welcome to relax and enjoy.",
+    "date": "2023-09-10T12:00:00Z",
+    "user_id": 5,
+    "username": "Lily"
+  },
+  {
+    "title": "Barktoberfest",
+    "location": "Austin Pet Expo",
+    "description": "Celebrate Barktoberfest at the Austin Pet Expo! Enjoy pet-friendly vendors, contests, and more.",
+    "date": "2023-10-02T13:00:00Z",
+    "user_id": 6,
+    "username": "Alex"
+  },
+  {
+    "title": "Paws & Paint",
+    "location": "Art Studio",
+    "description": "Unleash your pet's inner artist at our Paws & Paint event. We'll provide the paint, canvases, and plenty of fun!",
+    "date": "2023-10-15T14:00:00Z",
+    "user_id": 7,
+    "username": "Oliver"
+  },
+  {
+    "title": "Howl-O-Ween Costume Party",
+    "location": "Woof Park",
+    "description": "Join us for a spooktacular Howl-O-Ween costume party! Dress up your furry friend and enjoy games, treats, and a pet costume contest.",
+    "date": "2023-10-31T15:00:00Z",
+    "user_id": 8,
+    "username": "Grace"
+  },
+  {
+    "title": "Trail Tails Hike",
+    "location": "Greenbelt Trail",
+    "description": "Embark on a scenic hike with your four-legged companion. We'll explore the beautiful Greenbelt Trail and enjoy nature together.",
+    "date": "2023-11-10T16:00:00Z",
+    "user_id": 9,
+    "username": "Lucas"
+  },
+  {
+    "title": "Thanksgiving Pawrade",
+    "location": "Downtown Austin",
+    "description": "Join us for a festive Thanksgiving Pawrade through downtown Austin! Dress up your pets in holiday-themed attire and spread cheer.",
+    "date": "2023-11-25T17:00:00Z",
+    "user_id": 10,
+    "username": "Emma"
+  },
+  {
+    "title": "Jingle Paws 5K",
+    "location": "Lady Bird Lake Trail",
+    "description": "Get into the holiday spirit with the Jingle Paws 5K! Walk or run with your pet along the Lady Bird Lake Trail and support a good cause.",
+    "date": "2023-12-10T18:00:00Z",
+    "user_id": 11,
+    "username": "Noah"
+  },
+  {
+    "title": "Frosty Paws Winter Wonderland",
+    "location": "Snowy Meadows Park",
+    "description": "Celebrate the winter season at the Frosty Paws Winter Wonderland. Enjoy snow, games, and hot cocoa for both humans and pets!",
+    "date": "2023-12-25T19:00:00Z",
+    "user_id": 12,
+    "username": "Ava"
+  },
+  {
+    "title": "New Year's Pup Party",
+    "location": "Bark & Play Club",
+    "description": "Ring in the new year with a Pup Party! There will be music, games, and a countdown to a 'pawsome' 2024.",
+    "date": "2024-01-01T20:00:00Z",
+    "user_id": 1,
+    "username": "May"
+  },
+  {
+    "title": "Valentine's Day Playdate",
+    "location": "Lovey Park",
+    "description": "Spread the love with a Valentine's Day playdate at Lovey Park. Bring your pets and enjoy themed activities and treats.",
+    "date": "2024-02-14T21:00:00Z",
+    "user_id": 2,
+    "username": "Ty"
   }
 ]
+
