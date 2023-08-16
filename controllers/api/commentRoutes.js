@@ -9,6 +9,7 @@ router.post('/', withAuth, async (req, res) => {
       ...req.body,
       user_id: req.session.user_id
     });
+    console.log("TESTERSSSS"+ commentData);
     res.status(200).json({commentData, message:'Successfully added comment!'});
   } catch (err) {
     res.status(400).json(err.message);

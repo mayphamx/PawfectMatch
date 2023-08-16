@@ -4,13 +4,14 @@ const commentFormHandler = async function (event) {
 
   const playdate_id = document.querySelector('.new-comment-form').dataset.playdate_id;
 
-  const text = document.querySelector('#comment').value.trim();
-  if(text) {
+  const comment = document.querySelector('#comment').value.trim();
+
+  if(comment) {
     await fetch('/api/comments', {
       method: 'POST',
       body: JSON.stringify({
         playdate_id,
-        text,
+        comment,
       }),
       headers: {
         'Content-Type': 'application/json'
