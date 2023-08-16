@@ -55,3 +55,28 @@ body>main>div>div.col-md-7>h1>a {
   color: #6F61C0;
   font-weight: 700;
 }
+
+
+
+section.card {
+  padding: 8% 0;
+  border-radius: 2rem;
+  border: 5px dotted mediumpurple;
+  background: linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%);
+  filter: drop-shadow(2px 4px 6px #97d1d7);
+}
+
+
+section.card>h3 {
+  font-family: inter;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+h2.petnametitle {
+  font-family: inter;
+  font-size: 2.3rem;
+  margin-bottom: 4%;
+  font-weight: 900;
+  color: brown;
+}
