@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/dist/output.css" />
-  <link rel="stylesheet" href="/css/chat.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
@@ -39,11 +38,14 @@
     {{!-- Dashboard button --}}
     <a href="/dashboard"><button type="button" class="block py-2 pl-3 pr-4 text-white md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 mr-5 ml-5 mt-1 mb-1" aria-current="page">Dashboard</button></a>
 
-        {{!-- Chat button --}}
+    {{!-- Chat button --}}
     <a href="/pages/chatroom.html"><button class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 mr-5 ml-5 mt-1 mb-1"> Chat</button></a>
 
+    {{!-- Pet Profile button --}}
+    <a href="/petprofile/1"><button class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 mr-5 ml-5 mt-1 mb-1"> Pet Profile</button></a>
 
-          {{!-- Log out --}}
+
+    {{!-- Log out --}}
     <button id="logout" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700  md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent">Logout</button>
     {{else}}
  

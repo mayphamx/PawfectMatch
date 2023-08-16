@@ -88,13 +88,13 @@ router.get('/petprofile/:id', async (req, res) => {
     const petprofileData = await PetProfile.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: User
         }
       ],
     });
 
     const petprofile = petprofileData.get({ plain: true });
+    console.log(petprofileData);
 
     res.render('petprofile', {
       ...petprofile,
