@@ -9,6 +9,7 @@ Pawfect Match is a web application built with Node.js, Express, MySQL, Sequelize
 
 ## Table of Contents
   * [Description](#description)
+  * [S]
   * [Usage](#usage)
   * [Technologies](#technologies)
   * [Installation](#installation)
