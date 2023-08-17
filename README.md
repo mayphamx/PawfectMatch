@@ -9,7 +9,8 @@ Pawfect Match is a web application built with Node.js, Express, MySQL, Sequelize
 
 ## Table of Contents
   * [Description](#description)
-  * [Screenshots](#screenshots)
+  * [Front-End Screenshots](#front-end-screenshots)
+  * [Back-End Screenshots](#back-end-screenshots)
   * [Usage](#usage)
   * [Technologies](#technologies)
   * [Installation](#installation)
@@ -29,11 +30,19 @@ The app uses real-time chat to coordinate the details of each playdate. Pet owne
 Pawfect Match aims to help pet owners enrich their pets' lives through socialization while building meaningful relationships with their neighbors.
 
 
-## Screenshots
+## Front-End Screenshots
 ![photo1](./public/css/photos/screencapture-pet-profile.png)
 ![photo2](./public/css/photos/screencapture-event.png)
 ![photo2](./public/css/photos/screencapture-chat.png)
 ![photo2](./public/css/photos/screencapture-playdate-page.png)
+
+
+## Back-End Screenshots
+![db1](./public/css/photos/Screenshot_db_pawfect.png)
+![db2](./public/css/photos/Screenshot_db_1_user.png)
+![db3](./public/css/photos/Screenshot_db_2_playdate.png)
+![db4](./public/css/photos/Screenshot_db_3_pets.png)
+![db5](./public/css/photos/Screenshot_db_4_comments.png)
 
 ## Usage
 The Pawfect Match app allows users to:
@@ -99,7 +108,7 @@ The app will be available at http://localhost:3001
 - May Pham https://github.com/mayphamx
 - Dahlia Guido https://github.com/CypherNyx
 - Tyson Starks https://github.com/Starkoiii
-- Jonathan Gutierrez
+- Jonathan Gutierrez https://github.com/2015johngtz
 
 ## Contributing
 Pull requests are welcome. Please open an issue first to discuss any proposed changes or additions.
