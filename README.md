@@ -5,11 +5,11 @@
 
 Pawfect Match is a web application built with Node.js, Express, MySQL, Sequelize, and Handlebars that allows pet owners to connect with others in their neighborhood to schedule playdates for their pets.
 
-### [View the deployed application ➡️](#)
+### [View the deployed application ➡️](https://desolate-journey-58009-31421c44a662.herokuapp.com/)
 
 ## Table of Contents
   * [Description](#description)
-  * [S]
+  * [Screenshots](#screenshots)
   * [Usage](#usage)
   * [Technologies](#technologies)
   * [Installation](#installation)
@@ -28,6 +28,12 @@ The app uses real-time chat to coordinate the details of each playdate. Pet owne
 
 Pawfect Match aims to help pet owners enrich their pets' lives through socialization while building meaningful relationships with their neighbors.
 
+
+## Screenshots
+![photo1](./public/css/photos/screencapture-pet-profile.png)
+![photo2](./public/css/photos/screencapture-event.png)
+![photo2](./public/css/photos/screencapture-chat.png)
+![photo2](./public/css/photos/screencapture-playdate-page.png)
 
 ## Usage
 The Pawfect Match app allows users to:
@@ -72,7 +78,9 @@ Create a ```.env``` file with your MySQL credentials and database details.
 Run the schema file to set up the database locally.
 
 ```
-mysql -u root -p < db/schema.sql
+mysql -u root -p 
+
+< SOURCE db/schema.sql
 ```
 
 Optionally seed the database:
@@ -83,7 +91,7 @@ Start the application:
 ```
 npm start
 ```
-The app will be available at http://localhost:3001'
+The app will be available at http://localhost:3001
 
 <br>
 
