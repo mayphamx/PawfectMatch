@@ -3,12 +3,16 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Pawfect Match is a web application built with Node.js, Express, MySQL, Sequelize, and Handlebars that allows pet owners to connect with others in their neighborhood to schedule playdates for their pets.
+Pawfect Match is a web application powered by Node.js, Express, MySQL, and Sequelize for seamless functionality. Handlebars and Tailwind CSS ensure a stylish and user-friendly interface, all securely managed with Firebase realtime chat, BCrypt, and the app is publicly deployed with Heroku.
 
-### [View the deployed application ➡️](#)
+### [>> View the deployed application ➡️](https://desolate-journey-58009-31421c44a662.herokuapp.com/)
+
+### [>> Link to our project presentation ➡️](https://www.canva.com/design/DAFrqhg10yo/S7H6JDOeq1Vs6pLwZ6dGFQ/edit)
 
 ## Table of Contents
   * [Description](#description)
+  * [Front-End Screenshots](#front-end-screenshots)
+  * [Back-End Screenshots](#back-end-screenshots)
   * [Usage](#usage)
   * [Technologies](#technologies)
   * [Installation](#installation)
@@ -27,6 +31,20 @@ The app uses real-time chat to coordinate the details of each playdate. Pet owne
 
 Pawfect Match aims to help pet owners enrich their pets' lives through socialization while building meaningful relationships with their neighbors.
 
+
+## Front-End Screenshots
+![photo1](./public/css/photos/screencapture-pet-profile.png)
+![photo2](./public/css/photos/screencapture-event.png)
+![photo2](./public/css/photos/screencapture-chat.png)
+![photo2](./public/css/photos/screencapture-playdate-page.png)
+
+
+## Back-End Screenshots
+![db1](./public/css/photos/Screenshot_db_pawfect.png)
+![db2](./public/css/photos/Screenshot_db_1_user.png)
+![db3](./public/css/photos/Screenshot_db_2_playdate.png)
+![db4](./public/css/photos/Screenshot_db_3_pets.png)
+![db5](./public/css/photos/Screenshot_db_4_comments.png)
 
 ## Usage
 The Pawfect Match app allows users to:
@@ -71,7 +89,9 @@ Create a ```.env``` file with your MySQL credentials and database details.
 Run the schema file to set up the database locally.
 
 ```
-mysql -u root -p < db/schema.sql
+mysql -u root -p 
+
+< SOURCE db/schema.sql
 ```
 
 Optionally seed the database:
@@ -82,7 +102,7 @@ Start the application:
 ```
 npm start
 ```
-The app will be available at http://localhost:3001'
+The app will be available at http://localhost:3001
 
 <br>
 
@@ -90,7 +110,7 @@ The app will be available at http://localhost:3001'
 - May Pham https://github.com/mayphamx
 - Dahlia Guido https://github.com/CypherNyx
 - Tyson Starks https://github.com/Starkoiii
-- Jonathan Gutierrez
+- Jonathan Gutierrez https://github.com/2015johngtz
 
 ## Contributing
 Pull requests are welcome. Please open an issue first to discuss any proposed changes or additions.
