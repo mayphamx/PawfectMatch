@@ -3,9 +3,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Pawfect Match is a web application built with Node.js, Express, MySQL, Sequelize, and Handlebars that allows pet owners to connect with others in their neighborhood to schedule playdates for their pets.
+Pawfect Match is a web application powered by Node.js, Express, MySQL, and Sequelize for seamless functionality. Handlebars and Tailwind CSS ensure a stylish and user-friendly interface, all securely managed with Firebase realtime chat, BCrypt, and the app is publicly deployed with Heroku.
 
-### [View the deployed application ➡️](https://desolate-journey-58009-31421c44a662.herokuapp.com/)
+### [>> View the deployed application ➡️](https://desolate-journey-58009-31421c44a662.herokuapp.com/)
+
+### [>> Link to our project presentation ➡️](https://www.canva.com/design/DAFrqhg10yo/S7H6JDOeq1Vs6pLwZ6dGFQ/edit)
 
 ## Table of Contents
   * [Description](#description)
